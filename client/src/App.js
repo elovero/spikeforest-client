@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
 // import { async } from "rxjs/internal/scheduler/async";
-import styled from "styled-components";
+import styled from 'styled-components';
 
 class App extends Component {
   state = {
-    response: "",
-    post: "",
-    responseToPost: ""
+    response: '',
+    post: '',
+    responseToPost: '',
   };
 
   componentDidMount() {
@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   callApi = async () => {
-    const response = await fetch("/api/hello");
+    const response = await fetch('/api/hello');
     const body = await response.json();
     if (response.state !== 200) {
       throw Error(body.message);
@@ -28,12 +28,12 @@ class App extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    const response = await fetch("/api/world", {
-      method: "POST",
+    const response = await fetch('/api/world', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ post: this.state.post })
+      body: JSON.stringify({ post: this.state.post }),
     });
     const body = await response.text();
     this.setState({ responseToPost: body });
