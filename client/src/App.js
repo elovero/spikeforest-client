@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import { async } from "rxjs/internal/scheduler/async";
-import styled from 'styled-components';
 
 class App extends Component {
   state = {
