@@ -55,10 +55,13 @@ class Footer extends Component {
         </ul>
         <p class="footer__location xx-small tk-atlas">
           SpikeForest is made with 🔬 in NYC
-          <span role="img" aria-label="statue of liberty">
+          <span
+            role="img"
+            aria-label="statue of liberty"
+            className="footer__emoji"
+          >
             🗽
           </span>
-          .
         </p>
       </footer>
     );
