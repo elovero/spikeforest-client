@@ -5,13 +5,14 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
 
+import Container from 'react-bootstrap/Container';
+
 // import components
 import Home from '../components/Home';
 import About from '../components/About';
 import Recordings from '../components/Recordings';
 import Studies from '../components/Studies';
 import Algos from '../components/Algos';
-import Navbar from '../components/Navbar';
 import Header from '../components/Header/Header';
 import SingleStudy from '../components/SingleStudy';
 import headerCopy from '../header-copy';
@@ -26,7 +27,7 @@ class Routes extends Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <Header />
         <Switch>
           <Route
@@ -63,7 +64,7 @@ class Routes extends Component {
             render={props => <SingleStudy {...this.props} />}
           />
         </Switch>
-      </div>
+      </Container>
     );
   }
 }
