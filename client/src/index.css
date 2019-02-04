@@ -24,8 +24,8 @@ html {
   /* --sans: "Univers", "Arial", "HelveticaNeue", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   --serif: "Chronicle Text G1 Roman", Georgia, Times, "Times New Roman", serif; */
-  --sans: "Nunito Sans", sans-serif;
-  --serif: "Nunito Sans", sans-serif;
+  --sans: 'Nunito Sans', sans-serif;
+  --serif: 'Nunito Sans', sans-serif;
 }
 body {
   margin: 0;
@@ -123,9 +123,9 @@ a:hover {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button,
 button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
   display: inline-block;
   height: 38px;
   padding: 0 15px;
@@ -146,37 +146,37 @@ input[type="button"] {
 }
 .button:hover,
 button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
 .button:focus,
 button:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-input[type="button"]:focus {
+input[type='submit']:focus,
+input[type='reset']:focus,
+input[type='button']:focus {
   color: #333;
   border-color: #888;
   outline: 0;
 }
 .button.button-primary,
 button.button-primary,
-input[type="submit"].button-primary,
-input[type="reset"].button-primary,
-input[type="button"].button-primary {
+input[type='submit'].button-primary,
+input[type='reset'].button-primary,
+input[type='button'].button-primary {
   color: #fff;
   background-color: var(--fi-blue);
   border-color: var(--fi-blue);
 }
 .button.button-primary:hover,
 button.button-primary:hover,
-input[type="submit"].button-primary:hover,
-input[type="reset"].button-primary:hover,
-input[type="button"].button-primary:hover,
+input[type='submit'].button-primary:hover,
+input[type='reset'].button-primary:hover,
+input[type='button'].button-primary:hover,
 .button.button-primary:focus,
 button.button-primary:focus,
-input[type="submit"].button-primary:focus,
-input[type="reset"].button-primary:focus,
-input[type="button"].button-primary:focus {
+input[type='submit'].button-primary:focus,
+input[type='reset'].button-primary:focus,
+input[type='button'].button-primary:focus {
   color: #fff;
   background-color: var(--fi-yellow);
   border-color: var(--fi-yellow);
@@ -326,7 +326,7 @@ Use containers when you need a content area that has standard maximum width and 
 .container:after,
 .row:after {
   clear: both;
-  content: "";
+  content: '';
   display: table;
 }
 
@@ -467,19 +467,19 @@ li {
 
 /* Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.header {
+/* .header {
   margin: 6rem 0;
   text-align: center;
-}
+} */
 .header__title {
   font-family: var(--serif);
   margin-bottom: 3rem;
 }
-.header__logo {
+/* .header__logo {
   height: 52px;
   margin-bottom: 3rem;
   user-select: none;
-}
+} */
 .header__copy {
   margin-left: auto;
   margin-right: auto;
@@ -522,10 +522,10 @@ li {
     padding-left: 0rem;
   }
   .left-menu__link::after {
-    content: " / ";
+    content: ' / ';
   }
   .left-menu__link:last-of-type::after {
-    content: "";
+    content: '';
   }
   .left-menu__link {
     display: inline;

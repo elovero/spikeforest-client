@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import LeftMenu from "./LeftMenu";
-import Header from "./Header";
+import React, { Component } from 'react';
+import LeftMenu from './LeftMenu';
+import CopyHeader from './CopyHeader';
 
 class About extends Component {
   render() {
@@ -8,7 +8,7 @@ class About extends Component {
       <div>
         <LeftMenu />
         <div className="container container__body">
-          <Header headerCopy={this.props.header} />
+          <CopyHeader headerCopy={this.props.header} />
         </div>
       </div>
     );

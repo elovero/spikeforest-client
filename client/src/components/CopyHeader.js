@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import logo from "../images/logo.svg";
+import React, { Component } from 'react';
+import logo from '../images/logo.svg';
 
-class Header extends Component {
+class CopyHeader extends Component {
   render() {
     return (
       <div className="header">
@@ -19,4 +19,4 @@ class Header extends Component {
     );
   }
 }
-export default Header;
+export default CopyHeader;

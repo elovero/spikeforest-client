@@ -1,19 +1,20 @@
-import React, { Component } from "react";
-import { Route, Switch } from "react-router";
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router';
 
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import * as actionCreators from "../actions/actionCreators";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from '../actions/actionCreators';
 
 // import components
-import Home from "../components/Home";
-import About from "../components/About";
-import Recordings from "../components/Recordings";
-import Studies from "../components/Studies";
-import Algos from "../components/Algos";
-import Navbar from "../components/Navbar";
-import SingleStudy from "../components/SingleStudy";
-import headerCopy from "../header-copy";
+import Home from '../components/Home';
+import About from '../components/About';
+import Recordings from '../components/Recordings';
+import Studies from '../components/Studies';
+import Algos from '../components/Algos';
+import Navbar from '../components/Navbar';
+import Header from '../components/Header/Header';
+import SingleStudy from '../components/SingleStudy';
+import headerCopy from '../header-copy';
 
 class Routes extends Component {
   async componentDidMount() {
@@ -26,7 +27,7 @@ class Routes extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Header />
         <Switch>
           <Route
             exact
@@ -73,13 +74,13 @@ function mapStateToProps(state) {
     studies: state.studies,
     sorters: state.sorters,
     units: state.units,
-    loading: state.loading
+    loading: state.loading,
   };
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    ...bindActionCreators(actionCreators, dispatch)
+    ...bindActionCreators(actionCreators, dispatch),
   };
 };
 

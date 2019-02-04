@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import Header from "./Header";
-import Preloader from "./Preloader";
-import HeatmapsContainer from "./HeatmapsContainer";
-import { flattenUnits, mapUnitsBySorterStudy } from "../dataHandlers";
-import { isEmpty } from "../utils";
+import React, { Component } from 'react';
+import CopyHeader from './CopyHeader';
+import Preloader from './Preloader';
+import HeatmapsContainer from './HeatmapsContainer';
+import { flattenUnits, mapUnitsBySorterStudy } from '../dataHandlers';
+import { isEmpty } from '../utils';
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       flatUnits: {},
-      unitsMap: {}
+      unitsMap: {},
     };
   }
 
@@ -67,7 +67,7 @@ class Home extends Component {
     return (
       <div>
         <div className="container container__body">
-          <Header headerCopy={this.props.header} />
+          <CopyHeader headerCopy={this.props.header} />
           {loading ? (
             <Preloader />
           ) : (
