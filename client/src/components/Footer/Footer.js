@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './footer.css';
-import github from './github.svg';
+import github from './github-white.svg';
 
 class Footer extends Component {
   render() {
