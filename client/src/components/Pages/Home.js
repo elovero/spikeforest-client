@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import CopyHeader from './CopyHeader';
-import Preloader from './Preloader';
-import HeatmapsContainer from './HeatmapsContainer';
-import { flattenUnits, mapUnitsBySorterStudy } from '../dataHandlers';
-import { isEmpty } from '../utils';
+import CopyHeader from '../CopyHeader/CopyHeader';
+import Preloader from '../Preloader';
+import HeatmapsContainer from '../HeatmapsContainer';
+import { flattenUnits, mapUnitsBySorterStudy } from '../../dataHandlers';
+import { isEmpty } from '../../utils';
 
 class Home extends Component {
   constructor(props) {
@@ -67,7 +67,7 @@ class Home extends Component {
     return (
       <div>
         <div className="container container__body">
-          <CopyHeader headerCopy={this.props.header} />
+          {/* <CopyHeader headerCopy={this.props.header} /> */}
           {loading ? (
             <Preloader />
           ) : (

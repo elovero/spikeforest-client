@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CopyHeader from './CopyHeader';
-import StudiesList from './StudiesList';
+import CopyHeader from '../CopyHeader/CopyHeader';
+import StudiesList from '../StudiesList';
 
 class Studies extends Component {
   render() {

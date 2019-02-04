@@ -24,8 +24,11 @@ html {
   /* --sans: "Univers", "Arial", "HelveticaNeue", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   --serif: "Chronicle Text G1 Roman", Georgia, Times, "Times New Roman", serif; */
-  --sans: 'Nunito Sans', sans-serif;
-  --serif: 'Nunito Sans', sans-serif;
+  /* --sans: 'Nunito Sans', sans-serif;
+  --serif: 'Nunito Sans', sans-serif; */
+  --sans: 'Alegreya Sans', sans-serif;
+  --serif: 'Alegreya', serif;
+  --mono: 'Rajdhani', sans-serif;
 }
 body {
   margin: 0;
@@ -51,6 +54,7 @@ h6 {
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 300;
+  font-family: var(--serif);
 }
 h1 {
   font-size: 4rem;
@@ -107,16 +111,18 @@ h6 {
 
 p {
   margin-top: 0;
-  font-family: var(--serif);
+  font-family: var(--sans);
 }
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
   color: var(--fi-blue);
+  font-family: var(--sans);
 }
 a:hover {
   color: var(--fi-teal);
+  font-family: var(--sans);
 }
 
 /* Buttons
@@ -463,34 +469,6 @@ li {
 }
 .active {
   color: var(--fi-blue);
-}
-
-/* Header
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* .header {
-  margin: 6rem 0;
-  text-align: center;
-} */
-.header__title {
-  font-family: var(--serif);
-  margin-bottom: 3rem;
-}
-/* .header__logo {
-  height: 52px;
-  margin-bottom: 3rem;
-  user-select: none;
-} */
-.header__copy {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 780px;
-  font-size: 1.8rem;
-  line-height: 2.9rem;
-  text-align: left;
-}
-.header__copy--em {
-  color: var(--fi-blue);
-  font-weight: bold;
 }
 
 /* Left Menu

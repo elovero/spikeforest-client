@@ -1,0 +1,12 @@
+.navbar__white {
+  background: #fff;
+}
+
+.navbar__row {
+  width: 100%;
+}
+
+.navbar__center {
+  align-items: center;
+  justify-content: center;
+}

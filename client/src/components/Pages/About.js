@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LeftMenu from './LeftMenu';
-import CopyHeader from './CopyHeader';
+import LeftMenu from '../LeftMenu';
+import CopyHeader from '../CopyHeader/CopyHeader';
 
 class About extends Component {
   render() {
