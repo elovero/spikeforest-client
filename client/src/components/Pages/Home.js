@@ -69,11 +69,13 @@ class Home extends Component {
     let studies = this.props.studies ? this.getStudies() : null;
     return (
       <div className="home__body">
-        <Container>
+        <div>
           {loading ? (
-            <Preloader />
+            <Container>
+              <Preloader />
+            </Container>
           ) : (
-            <Container fluid="true">
+            <div>
               <div className="intro">
                 <p className="big">Spike Sorting Results</p>
                 <div className="dividerthick" />
@@ -98,9 +100,9 @@ class Home extends Component {
                 shortSorters={sorters}
                 unitsMap={this.state.unitsMap}
               />
-            </Container>
+            </div>
           )}
-        </Container>
+        </div>
       </div>
     );
   }

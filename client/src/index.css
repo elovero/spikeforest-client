@@ -359,7 +359,7 @@ Use containers when you need a content area that has standard maximum width and 
   padding: 7.2rem 1rem 0rem 1rem;
 }
 
-.container__heatmap {
+/* .container__heatmap {
   width: 100%;
   margin-bottom: 7.2rem;
 }
@@ -370,7 +370,7 @@ Use containers when you need a content area that has standard maximum width and 
   justify-content: center;
   align-items: center;
   width: 100%;
-}
+} */
 
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

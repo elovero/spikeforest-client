@@ -31,45 +31,41 @@ class Routes extends Component {
     return (
       <div>
         <Header />
-        <Container>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={props => (
-                <Home {...this.props} header={headerCopy.home} />
-              )}
-            />
-            <Route
-              path="/algos"
-              render={props => (
-                <Algos {...this.props} header={headerCopy.algos} />
-              )}
-            />
-            <Route
-              path="/about"
-              render={props => (
-                <About {...this.props} header={headerCopy.about} />
-              )}
-            />
-            <Route
-              path="/recordings"
-              render={props => (
-                <Recordings {...this.props} header={headerCopy.recordings} />
-              )}
-            />
-            <Route
-              path="/studies"
-              render={props => (
-                <Studies {...this.props} header={headerCopy.studies} />
-              )}
-            />
-            <Route
-              path="/study/:studyId"
-              render={props => <SingleStudy {...this.props} />}
-            />
-          </Switch>
-        </Container>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={props => <Home {...this.props} header={headerCopy.home} />}
+          />
+          <Route
+            path="/algos"
+            render={props => (
+              <Algos {...this.props} header={headerCopy.algos} />
+            )}
+          />
+          <Route
+            path="/about"
+            render={props => (
+              <About {...this.props} header={headerCopy.about} />
+            )}
+          />
+          <Route
+            path="/recordings"
+            render={props => (
+              <Recordings {...this.props} header={headerCopy.recordings} />
+            )}
+          />
+          <Route
+            path="/studies"
+            render={props => (
+              <Studies {...this.props} header={headerCopy.studies} />
+            )}
+          />
+          <Route
+            path="/study/:studyId"
+            render={props => <SingleStudy {...this.props} />}
+          />
+        </Switch>
         <Footer />
       </div>
     );

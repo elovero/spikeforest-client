@@ -27,10 +27,9 @@ class HeatmapsContainer extends Component {
   render() {
     let format = this.state.format;
     return (
-      <div>
+      <div className="container__heatmaps">
         <div className="container container__heatmap--row">
           <div className="heatmap_col col--12">
-            <h4 className="slider__title">Spike Sorting Results Overview</h4>
             <ButtonToolbar>
               <ToggleButtonGroup
                 type="radio"
