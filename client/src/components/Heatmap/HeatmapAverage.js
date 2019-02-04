@@ -82,7 +82,6 @@ class HeatmapAverage extends Component {
           <div className="container container__heatmap--row">
             <div className="heatmap__col col--8">
               <div className="slider__container">
-                <p>Average accuracy of groundtruth units above SNR threshold</p>
                 <div className="slider__copy">
                   <p>
                     <b>Minimum SNR: {snr}</b>

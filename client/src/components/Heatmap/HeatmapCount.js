@@ -73,7 +73,6 @@ class HeatmapCount extends Component {
           <div className="container container__heatmap--row">
             <div className="heatmap__col col--8">
               <div className="slider__container">
-                <p>Number of groundtruth units above accuracy threshold</p>
                 <div className="slider__copy">
                   <p>
                     <b>Minimum accuracy: {Math.round(accuracy * 100) / 100}</b>

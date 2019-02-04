@@ -14,3 +14,19 @@
   align-items: center;
   width: 100%;
 }
+
+.heatmap__buttonrow {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.heatmap__title {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  font-weight: 300;
+}

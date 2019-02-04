@@ -80,7 +80,7 @@ class Home extends Component {
                 <p className="big">Spike Sorting Results</p>
                 <div className="dividerthick" />
                 <p className="subhead">
-                  Spike Sorting Algorithms, compared against electrophysiology
+                  Spike sorting algorithms, compared against electrophysiology
                   datasets with groundtruth
                 </p>
                 <p className="byline">
@@ -93,6 +93,22 @@ class Home extends Component {
                   comparisons, and inspect the source code used to generate
                   these data.
                 </p>
+              </div>
+              <div className="opener">
+                <div className="prose-container">
+                  <p>
+                    Sail ho broadside provost heave to topgallant ballast parrel
+                    gunwalls rum scuttle. <b>January 2019 </b>
+                    o'nine tails hearties jury mast hardtack driver lad.
+                  </p>
+                  <p>
+                    Lookout transom measured fer yer chains brigantine pressgang
+                    trysail draught ho hearties mutiny by
+                    <a href="https://tahirhemphill.com"> Link Pirate</a>. Rope's
+                    end stern cog Chain Shot draught pink Gold Road such as
+                    lanyard topsail hornswaggle Drake.
+                  </p>
+                </div>
               </div>
               <HeatmapsContainer
                 {...this.props}

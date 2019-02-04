@@ -6,6 +6,7 @@ import {
   ButtonToolbar,
   ToggleButtonGroup,
   ToggleButton,
+  Container,
 } from 'react-bootstrap';
 
 import './heatmap.css';
@@ -26,27 +27,31 @@ class HeatmapsContainer extends Component {
 
   render() {
     let format = this.state.format;
+    let copy =
+      format === 'count'
+        ? 'Number of groundtruth units above accuracy threshold'
+        : 'Average accuracy of groundtruth units above SNR threshold';
     return (
       <div className="container__heatmaps">
-        <div className="container container__heatmap--row">
-          <div className="heatmap_col col--12">
-            <ButtonToolbar>
-              <ToggleButtonGroup
-                type="radio"
-                name="options"
-                value={this.state.format}
-                onChange={this.handleFormatChange}
-              >
-                <ToggleButton value={'count'}>
-                  Number of Units Found
-                </ToggleButton>
-                <ToggleButton value={'average'}>
-                  Average Accuracy Above a Threshhold
-                </ToggleButton>
-              </ToggleButtonGroup>
-            </ButtonToolbar>
-          </div>
-        </div>
+        <Container>
+          <p className="heatmap__title">{copy}</p>
+          <ButtonToolbar className="heatmap__buttonrow">
+            <ToggleButtonGroup
+              type="radio"
+              name="options"
+              size="lg"
+              value={this.state.format}
+              onChange={this.handleFormatChange}
+            >
+              <ToggleButton size="lg" value={'count'}>
+                Number of Units Found
+              </ToggleButton>
+              <ToggleButton size="lg" value={'average'}>
+                Average Accuracy Above a Threshhold
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </ButtonToolbar>
+        </Container>
         {format === 'count' ? (
           <HeatmapCount {...this.props} format={this.state.format} />
         ) : (
