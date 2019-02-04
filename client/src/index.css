@@ -9,7 +9,7 @@ are based on 10px sizing. So basically 1.5rem = 15px :) */
   box-sizing: inherit;
 }
 html {
-  font-size: 62.5%;
+  font-size: 80%;
   --fi-blue: #384ca2;
   --fi-grey: #807f84;
   --fi-teal: #00839b;
@@ -26,8 +26,8 @@ html {
   --serif: "Chronicle Text G1 Roman", Georgia, Times, "Times New Roman", serif; */
   /* --sans: 'Nunito Sans', sans-serif;
   --serif: 'Nunito Sans', sans-serif; */
-  --sans: 'Alegreya Sans', sans-serif;
-  --serif: 'Alegreya', serif;
+  --sans: 'Quattrocento Sans', sans-serif;
+  --serif: 'Quattrocento', serif;
   --mono: 'Rajdhani', sans-serif;
 }
 body {
@@ -39,8 +39,8 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: var(--sans);
-  color: var(--off-black);
-  background-color: var(--off-white);
+  color: rgb(42, 42, 42);
+  /* background-color: #fafafa; */
 }
 
 /* Typography

@@ -4,6 +4,9 @@ import Preloader from '../Preloader';
 import HeatmapsContainer from '../HeatmapsContainer';
 import { flattenUnits, mapUnitsBySorterStudy } from '../../dataHandlers';
 import { isEmpty } from '../../utils';
+import Container from 'react-bootstrap/Container';
+
+import './pages.css';
 
 class Home extends Component {
   constructor(props) {
@@ -65,9 +68,8 @@ class Home extends Component {
     let sorters = this.props.sorters ? this.getSorters() : null;
     let studies = this.props.studies ? this.getStudies() : null;
     return (
-      <div>
-        <div className="container container__body">
-          {/* <CopyHeader headerCopy={this.props.header} /> */}
+      <div className="home__body">
+        <Container>
           {loading ? (
             <Preloader />
           ) : (
@@ -80,7 +82,7 @@ class Home extends Component {
               />
             </div>
           )}
-        </div>
+        </Container>
       </div>
     );
   }

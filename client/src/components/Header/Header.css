@@ -1,12 +1,8 @@
 .navbar__white {
   background: #fff;
+  /* border-bottom: 0.05rem solid #e5e5e5; */
 }
 
-.navbar__row {
-  width: 100%;
-}
-
-.navbar__center {
-  align-items: center;
-  justify-content: center;
+.navbar__hidden {
+  visibility: hidden;
 }

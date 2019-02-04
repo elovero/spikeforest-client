@@ -45,13 +45,12 @@ class Footer extends Component {
             <a href="https://flatironinstitute.org">Flatiron Institute</a>
           </li>
           <li class="x-small">
-            <a href="about/#team">Spikeforest Backend?</a>
+            <a href="https://github.com/flatironinstitute/spikeforest2">
+              SpikeForest Analysis Framework
+            </a>
           </li>
           <li class="x-small">
-            <a href="about/#team">KBucket? Pairio?</a>
-          </li>
-          <li class="x-small">
-            <a href="about/#contact">Contact us</a>
+            <a mailto="elovero@flatironinstitute.org">Contact us</a>
           </li>
         </ul>
         <p class="footer__location xx-small tk-atlas">

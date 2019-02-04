@@ -12,16 +12,37 @@ class Header extends Component {
     return (
       <Navbar variant="light" expand="lg" fixed="top" className="navbar__white">
         <Container className="navbar__container">
+          <Navbar.Collapse className="navbar__hidden">
+            <Nav className="mr-auto">
+              <Nav.Link href="/recordings">Recordings</Nav.Link>
+              <Nav.Link href="/algos">Algorithms</Nav.Link>
+              <NavDropdown title="About" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/about/background">
+                  Background
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/about/platformdata">
+                  Platform Data
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/about/contributors">
+                  Contributors
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="/about/contact">
+                  Contact
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
           <Navbar.Brand href="/">
             <img
               alt="spikeforest logo"
               src={logo}
               height="48"
-              className="d-inline-block align-top"
+              className="d-inline-block align-top navbar__logo"
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" className="navbar__right">
             <Nav className="mr-auto">
               <Nav.Link href="/recordings">Recordings</Nav.Link>
               <Nav.Link href="/algos">Algorithms</Nav.Link>
