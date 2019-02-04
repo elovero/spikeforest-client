@@ -72,7 +72,7 @@ class HeatmapCount extends Component {
           <Preloader />
         ) : (
           <Container>
-            <div className="slider__copy">
+            <div className="byline">
               <p>
                 <b>Minimum accuracy: {Math.round(accuracy * 100) / 100}</b>
               </p>

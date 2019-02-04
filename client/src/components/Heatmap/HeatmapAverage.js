@@ -8,6 +8,7 @@ import 'react-rangeslider/lib/index.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../actions/actionCreators';
+import Container from 'react-bootstrap/Container';
 
 class HeatmapAverage extends Component {
   constructor(props) {
@@ -74,29 +75,34 @@ class HeatmapAverage extends Component {
   render() {
     let loading = isEmpty(this.state.builtData);
     let snr = this.state.snrMin;
+    let selected = this.props.selectedStudy ? (
+      <Container>
+        <StudySorterSummary {...this.props} accuracy={this.state.snrMin} />
+      </Container>
+    ) : (
+      <div />
+    );
     return (
       <div>
         {loading ? (
           <Preloader />
         ) : (
-          <div className="container container__heatmap--row">
-            <div className="heatmap__col col--8">
-              <div className="slider__container">
-                <div className="slider__copy">
-                  <p>
-                    <b>Minimum SNR: {snr}</b>
-                  </p>
-                </div>
-                <div className="slider__vertical">
-                  <Slider
-                    min={0}
-                    max={50}
-                    value={snr}
-                    step={1}
-                    orientation="horizontal"
-                    onChange={this.handleAccuracyChange}
-                  />
-                </div>
+          <div>
+            <Container>
+              <div className="byline">
+                <p>
+                  <b>Minimum SNR: {snr}</b>
+                </p>
+              </div>
+              <div className="slider__vertical">
+                <Slider
+                  min={0}
+                  max={50}
+                  value={snr}
+                  step={0.05}
+                  orientation="horizontal"
+                  onChange={this.handleAccuracyChange}
+                />
               </div>
               <HeatmapViz
                 {...this.props}
@@ -104,17 +110,8 @@ class HeatmapAverage extends Component {
                 sorters={this.props.shortSorters}
                 format="average"
               />
-            </div>
-            {this.props.selectedStudy ? (
-              <div className="unitdetail col--6">
-                <StudySorterSummary
-                  {...this.props}
-                  accuracy={this.state.snrMin}
-                />
-              </div>
-            ) : (
-              <div />
-            )}
+            </Container>
+            {selected}
           </div>
         )}
       </div>
