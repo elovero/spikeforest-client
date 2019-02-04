@@ -8,6 +8,7 @@ import 'react-rangeslider/lib/index.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../actions/actionCreators';
+import Container from 'react-bootstrap/Container';
 
 class HeatmapCount extends Component {
   constructor(props) {
@@ -70,43 +71,29 @@ class HeatmapCount extends Component {
         {loading ? (
           <Preloader />
         ) : (
-          <div className="container container__heatmap--row">
-            <div className="heatmap__col col--8">
-              <div className="slider__container">
-                <div className="slider__copy">
-                  <p>
-                    <b>Minimum accuracy: {Math.round(accuracy * 100) / 100}</b>
-                  </p>
-                </div>
-                <div className="slider__vertical">
-                  <Slider
-                    min={0}
-                    max={1}
-                    value={accuracy}
-                    step={0.05}
-                    orientation="horizontal"
-                    onChange={this.handleAccuracyChange}
-                  />
-                </div>
-              </div>
-              <HeatmapViz
-                {...this.props}
-                filteredData={this.state.builtData}
-                sorters={this.props.shortSorters}
-                format="count"
+          <Container>
+            <div className="slider__copy">
+              <p>
+                <b>Minimum accuracy: {Math.round(accuracy * 100) / 100}</b>
+              </p>
+            </div>
+            <div className="slider__vertical">
+              <Slider
+                min={0}
+                max={1}
+                value={accuracy}
+                step={0.05}
+                orientation="horizontal"
+                onChange={this.handleAccuracyChange}
               />
             </div>
-            {this.props.selectedStudy ? (
-              <div className="unitdetail col--6">
-                <StudySorterSummary
-                  {...this.props}
-                  accuracy={this.state.accuracy}
-                />
-              </div>
-            ) : (
-              <div />
-            )}
-          </div>
+            <HeatmapViz
+              {...this.props}
+              filteredData={this.state.builtData}
+              sorters={this.props.shortSorters}
+              format="count"
+            />
+          </Container>
         )}
       </div>
     );
@@ -128,3 +115,13 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(HeatmapCount);
+
+// {
+//   this.props.selectedStudy ? (
+//     <Container>
+//       <StudySorterSummary {...this.props} accuracy={this.state.accuracy} />
+//     </Container>
+//   ) : (
+//     <div />
+//   );
+// }

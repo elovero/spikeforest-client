@@ -43,10 +43,10 @@ class HeatmapsContainer extends Component {
               value={this.state.format}
               onChange={this.handleFormatChange}
             >
-              <ToggleButton size="lg" value={'count'}>
+              <ToggleButton size="lg" value={'count'} variant="outline-dark">
                 Number of Units Found
               </ToggleButton>
-              <ToggleButton size="lg" value={'average'}>
+              <ToggleButton size="lg" value={'average'} variant="outline-dark">
                 Average Accuracy Above a Threshhold
               </ToggleButton>
             </ToggleButtonGroup>

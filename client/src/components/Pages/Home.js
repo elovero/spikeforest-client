@@ -94,7 +94,7 @@ class Home extends Component {
                   these data.
                 </p>
               </div>
-              <div className="opener">
+              {/* <div className="opener">
                 <div className="prose-container">
                   <p>
                     Sail ho broadside provost heave to topgallant ballast parrel
@@ -109,7 +109,7 @@ class Home extends Component {
                     lanyard topsail hornswaggle Drake.
                   </p>
                 </div>
-              </div>
+              </div> */}
               <HeatmapsContainer
                 {...this.props}
                 shortStudies={studies}

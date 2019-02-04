@@ -30,3 +30,8 @@
   font-size: 3rem;
   font-weight: 300;
 }
+
+/* .btn-outline-primary:not(:disabled):not(.disabled).active {
+  background-color: #384ca2;
+  border-color: #384ca2;
+} */
