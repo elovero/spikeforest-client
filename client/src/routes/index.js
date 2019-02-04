@@ -5,14 +5,17 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
 
+import Container from 'react-bootstrap/Container';
+
 // import components
-import Home from '../components/Home';
-import About from '../components/About';
-import Recordings from '../components/Recordings';
-import Studies from '../components/Studies';
-import Algos from '../components/Algos';
-import Navbar from '../components/Navbar';
 import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+
+import Home from '../components/Pages/Home';
+import About from '../components/Pages/About';
+import Recordings from '../components/Pages/Recordings';
+import Studies from '../components/Pages/Studies';
+import Algos from '../components/Pages/Algos';
 import SingleStudy from '../components/SingleStudy';
 import headerCopy from '../header-copy';
 
@@ -63,6 +66,7 @@ class Routes extends Component {
             render={props => <SingleStudy {...this.props} />}
           />
         </Switch>
+        <Footer />
       </div>
     );
   }

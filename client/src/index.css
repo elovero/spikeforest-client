@@ -9,7 +9,7 @@ are based on 10px sizing. So basically 1.5rem = 15px :) */
   box-sizing: inherit;
 }
 html {
-  font-size: 62.5%;
+  font-size: 80%;
   --fi-blue: #384ca2;
   --fi-grey: #807f84;
   --fi-teal: #00839b;
@@ -24,8 +24,11 @@ html {
   /* --sans: "Univers", "Arial", "HelveticaNeue", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   --serif: "Chronicle Text G1 Roman", Georgia, Times, "Times New Roman", serif; */
-  --sans: 'Nunito Sans', sans-serif;
-  --serif: 'Nunito Sans', sans-serif;
+  /* --sans: 'Nunito Sans', sans-serif;
+  --serif: 'Nunito Sans', sans-serif; */
+  --sans: 'Quattrocento Sans', sans-serif;
+  --serif: 'Quattrocento', serif;
+  --mono: 'Rajdhani', sans-serif;
 }
 body {
   margin: 0;
@@ -36,8 +39,8 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: var(--sans);
-  color: var(--off-black);
-  background-color: var(--off-white);
+  color: rgb(42, 42, 42);
+  /* background-color: #fafafa; */
 }
 
 /* Typography
@@ -51,6 +54,7 @@ h6 {
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 300;
+  font-family: var(--serif);
 }
 h1 {
   font-size: 4rem;
@@ -107,16 +111,18 @@ h6 {
 
 p {
   margin-top: 0;
-  font-family: var(--serif);
+  font-family: var(--sans);
 }
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
   color: var(--fi-blue);
+  font-family: var(--sans);
 }
 a:hover {
   color: var(--fi-teal);
+  font-family: var(--sans);
 }
 
 /* Buttons
@@ -353,7 +359,7 @@ Use containers when you need a content area that has standard maximum width and 
   padding: 7.2rem 1rem 0rem 1rem;
 }
 
-.container__heatmap {
+/* .container__heatmap {
   width: 100%;
   margin-bottom: 7.2rem;
 }
@@ -364,7 +370,7 @@ Use containers when you need a content area that has standard maximum width and 
   justify-content: center;
   align-items: center;
   width: 100%;
-}
+} */
 
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -463,34 +469,6 @@ li {
 }
 .active {
   color: var(--fi-blue);
-}
-
-/* Header
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* .header {
-  margin: 6rem 0;
-  text-align: center;
-} */
-.header__title {
-  font-family: var(--serif);
-  margin-bottom: 3rem;
-}
-/* .header__logo {
-  height: 52px;
-  margin-bottom: 3rem;
-  user-select: none;
-} */
-.header__copy {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 780px;
-  font-size: 1.8rem;
-  line-height: 2.9rem;
-  text-align: left;
-}
-.header__copy--em {
-  color: var(--fi-blue);
-  font-weight: bold;
 }
 
 /* Left Menu
@@ -646,10 +624,10 @@ li {
   margin-bottom: 5rem;
 }
 
-.heatmap__viz {
+/* .heatmap__viz {
   max-height: 650px;
   overflow: scroll;
-}
+} */
 
 .rv-continuous-color-legend .rv-gradient {
   height: 12px !important;

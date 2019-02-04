@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import LeftMenu from './LeftMenu';
-import CopyHeader from './CopyHeader';
+import CopyHeader from '../CopyHeader/CopyHeader';
+import StudiesList from '../StudiesList';
 
-class About extends Component {
+class Studies extends Component {
   render() {
     return (
       <div>
-        <LeftMenu />
         <div className="container container__body">
           <CopyHeader headerCopy={this.props.header} />
         </div>
+        <StudiesList studies={this.props.studies} />
       </div>
     );
   }
 }
-export default About;
+export default Studies;

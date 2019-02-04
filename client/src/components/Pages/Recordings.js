@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import CopyHeader from './CopyHeader';
+import CopyHeader from '../CopyHeader/CopyHeader';
 import ReactCollapsingTable from 'react-collapsing-table';
-import Preloader from './Preloader';
-import { isEmpty } from '../utils';
+import Preloader from '../Preloader';
+import { isEmpty } from '../../utils';
 
 class Recordings extends Component {
   render() {

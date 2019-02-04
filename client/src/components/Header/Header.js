@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container';
 import logo from './logo-no-icon.svg';
 
 import './Header.css';
@@ -7,81 +10,44 @@ import './Header.css';
 class Header extends Component {
   render() {
     return (
-      <header>
-        <NavLink to="/" className="header__link">
-          <img src={logo} className="header__logo" alt="logo" />
-        </NavLink>
-        <div className="menu">
-          <p className="menu__tagline">
-            <NavLink to="/" className="menu__link--inline">
-              SpikeForest
-            </NavLink>
-            is a website for evaluating and comparing spike sorting algorithms
-          </p>
-          <div className="menu__list">
-            <NavLink
-              className="menu__link"
-              to="/recordings"
-              activeClassName="active"
-            >
-              Recordings
-            </NavLink>
-            <NavLink
-              className="menu__link"
-              to="/algos"
-              activeClassName="active"
-            >
-              Algorithms
-            </NavLink>
-            <NavLink
-              className="menu__link"
-              to="/about"
-              activeClassName="active"
-            >
-              About
-            </NavLink>
-          </div>
-        </div>
-        <btn className="menu__toggle">
-          <span className="menu__bars">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-menu"
-            >
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          </span>
-        </btn>
-        <btn className="menu__toggle">
-          <span className="menu__x">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-x"
-            >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </span>
-        </btn>
-      </header>
+      <Navbar variant="light" expand="lg" fixed="top" className="navbar__white">
+        <Container className="navbar__container">
+          <Navbar.Brand href="/">
+            Oh hello. 👋 Please ignore this awkward navbar Liz will fix but
+            wanted to work on other stuff
+          </Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img
+              alt="spikeforest logo"
+              src={logo}
+              height="48"
+              className="d-inline-block align-top navbar__logo"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav" className="navbar__right">
+            <Nav className="mr-auto">
+              <Nav.Link href="/recordings">Recordings</Nav.Link>
+              <Nav.Link href="/algos">Algorithms</Nav.Link>
+              <NavDropdown title="About" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/about/background">
+                  Background
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/about/platformdata">
+                  Platform Data
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/about/contributors">
+                  Contributors
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="/about/contact">
+                  Contact
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     );
   }
 }
