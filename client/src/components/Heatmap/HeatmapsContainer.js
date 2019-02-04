@@ -1,24 +1,26 @@
-import React, { Component } from "react";
-import HeatmapCount from "./HeatmapCount";
-import HeatmapAverage from "./HeatmapAverage";
-import "react-rangeslider/lib/index.css";
+import React, { Component } from 'react';
+import HeatmapCount from './HeatmapCount';
+import HeatmapAverage from './HeatmapAverage';
+import 'react-rangeslider/lib/index.css';
 import {
   ButtonToolbar,
   ToggleButtonGroup,
-  ToggleButton
-} from "react-bootstrap";
+  ToggleButton,
+} from 'react-bootstrap';
+
+import './heatmap.css';
 
 class HeatmapsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      format: "count"
+      format: 'count',
     };
   }
 
   handleFormatChange = value => {
     this.setState({
-      format: value
+      format: value,
     });
   };
 
@@ -36,17 +38,17 @@ class HeatmapsContainer extends Component {
                 value={this.state.format}
                 onChange={this.handleFormatChange}
               >
-                <ToggleButton value={"count"}>
+                <ToggleButton value={'count'}>
                   Number of Units Found
                 </ToggleButton>
-                <ToggleButton value={"average"}>
+                <ToggleButton value={'average'}>
                   Average Accuracy Above a Threshhold
                 </ToggleButton>
               </ToggleButtonGroup>
             </ButtonToolbar>
           </div>
         </div>
-        {format === "count" ? (
+        {format === 'count' ? (
           <HeatmapCount {...this.props} format={this.state.format} />
         ) : (
           <HeatmapAverage {...this.props} format={this.state.format} />

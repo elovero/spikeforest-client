@@ -12,26 +12,6 @@ class Footer extends Component {
             evaluating and comparing spike-sorting algorithms for
             neurophysiology data analysis.
           </p>
-          <div class="footer__interwebs">
-            <div class="interwebs__outer">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/flatironinstitute"
-                class="github-logo"
-              >
-                <img alt="spikeforest logo" src={github} height="24" />
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/flatironinstitute"
-                class="github-logo"
-              >
-                <img alt="spikeforest logo" src={github} height="24" />
-              </a>
-            </div>
-          </div>
         </div>
 
         <ul class="footer__links x-small">
@@ -50,9 +30,29 @@ class Footer extends Component {
             </a>
           </li>
           <li class="x-small">
-            <a mailto="elovero@flatironinstitute.org">Contact us</a>
+            <a mailto="elovero@flatironinstitute.org">Contact</a>
           </li>
         </ul>
+        <div class="footer__interwebs">
+          <div class="interwebs__outer">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/flatironinstitute"
+              class="github-logo"
+            >
+              <img alt="spikeforest logo" src={github} height="24" />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/flatironinstitute"
+              class="github-logo"
+            >
+              <img alt="spikeforest logo" src={github} height="24" />
+            </a>
+          </div>
+        </div>
         <p class="footer__location xx-small tk-atlas">
           SpikeForest is made with 🔬 in NYC
           <span

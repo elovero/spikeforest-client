@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CopyHeader from '../CopyHeader/CopyHeader';
 import Preloader from '../Preloader';
-import HeatmapsContainer from '../HeatmapsContainer';
+import HeatmapsContainer from '../Heatmap/HeatmapsContainer';
 import { flattenUnits, mapUnitsBySorterStudy } from '../../dataHandlers';
 import { isEmpty } from '../../utils';
 import Container from 'react-bootstrap/Container';
@@ -73,14 +73,32 @@ class Home extends Component {
           {loading ? (
             <Preloader />
           ) : (
-            <div className="container__heatmap">
+            <Container fluid="true">
+              <div className="intro">
+                <p className="big">Spike Sorting Results</p>
+                <div className="dividerthick" />
+                <p className="subhead">
+                  Spike Sorting Algorithms, compared against electrophysiology
+                  datasets with groundtruth
+                </p>
+                <p className="byline">
+                  Project of
+                  <a href="https://flatironinstitute.org">Flatiron Institute</a>
+                </p>
+                <p className="updated">Updated on February 4, 2019</p>
+                <p className="updated-sub">
+                  Browse all datasets, algorithms, sorting results, and
+                  comparisons, and inspect the source code used to generate
+                  these data.
+                </p>
+              </div>
               <HeatmapsContainer
                 {...this.props}
                 shortStudies={studies}
                 shortSorters={sorters}
                 unitsMap={this.state.unitsMap}
               />
-            </div>
+            </Container>
           )}
         </Container>
       </div>

@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import LeftMenu from '../LeftMenu';
 import CopyHeader from '../CopyHeader/CopyHeader';
+import Container from 'react-bootstrap/Container';
 
 class About extends Component {
   render() {
     return (
-      <div>
-        <LeftMenu />
-        <div className="container container__body">
+      <div className="about__body">
+        <Container>
           <CopyHeader headerCopy={this.props.header} />
-        </div>
+          <LeftMenu />
+        </Container>
       </div>
     );
   }

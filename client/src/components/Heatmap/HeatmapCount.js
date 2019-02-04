@@ -1,61 +1,52 @@
 import React, { Component } from 'react';
 import HeatmapViz from './HeatmapViz';
-import { isEmpty } from '../utils';
-import Preloader from './Preloader';
-import StudySorterSummary from './StudySorterSummary';
+import { isEmpty } from '../../utils';
+import Preloader from '../Preloader';
+import StudySorterSummary from '../StudySorterSummary';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actionCreators from '../actions/actionCreators';
+import * as actionCreators from '../../actions/actionCreators';
 
-class HeatmapAverage extends Component {
+class HeatmapCount extends Component {
   constructor(props) {
     super(props);
     this.state = {
       // TODO: Change this to accuracy filtered data
       builtData: [],
-      snrMin: 5,
+      accuracy: 0.8,
     };
   }
 
   componentDidMount() {
     if (this.props.unitsMap.length) {
-      this.filterSNRMap();
+      this.filterAccuracyMap();
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (
       this.props.unitsMap !== prevProps.unitsMap ||
-      this.state.snrMin !== prevState.snrMin
+      this.state.accuracy !== prevState.accuracy
     ) {
-      this.filterSNRMap();
+      this.filterAccuracyMap();
     }
   }
 
   filterAccuracy(sorterArray) {
     let newArr = sorterArray.map(sorter => {
-      let accs = [];
-      sorter.true_units.forEach(unit => {
-        if (unit.snr > this.state.snrMin) {
-          accs.push(unit.accuracy);
-        }
+      let above = sorter.accuracies.filter(accu => {
+        return accu >= this.state.accuracy;
       });
-      let aboveAvg = 0;
-      if (accs.length) {
-        let sum = accs.reduce((a, b) => a + b);
-        aboveAvg = sum / accs.length;
-      }
-      // This just prints the output to 2 digits
-      sorter.in_range = Math.round(aboveAvg * 100) / 100;
-      sorter.color = Math.round(aboveAvg * 100) / 100;
+      sorter.in_range = above.length;
+      sorter.color = above.length;
       return sorter;
     });
     return newArr;
   }
 
-  filterSNRMap() {
+  filterAccuracyMap() {
     let built = this.props.unitsMap.map(study => {
       let values = Object.values(study)[0];
       let key = Object.keys(study)[0];
@@ -67,13 +58,13 @@ class HeatmapAverage extends Component {
 
   handleAccuracyChange = value => {
     this.setState({
-      snrMin: value,
+      accuracy: value,
     });
   };
 
   render() {
     let loading = isEmpty(this.state.builtData);
-    let snr = this.state.snrMin;
+    let accuracy = this.state.accuracy;
     return (
       <div>
         {loading ? (
@@ -82,18 +73,18 @@ class HeatmapAverage extends Component {
           <div className="container container__heatmap--row">
             <div className="heatmap__col col--8">
               <div className="slider__container">
-                <p>Average accuracy of groundtruth units above SNR threshold</p>
+                <p>Number of groundtruth units above accuracy threshold</p>
                 <div className="slider__copy">
                   <p>
-                    <b>Minimum SNR: {snr}</b>
+                    <b>Minimum accuracy: {Math.round(accuracy * 100) / 100}</b>
                   </p>
                 </div>
                 <div className="slider__vertical">
                   <Slider
                     min={0}
-                    max={50}
-                    value={snr}
-                    step={1}
+                    max={1}
+                    value={accuracy}
+                    step={0.05}
                     orientation="horizontal"
                     onChange={this.handleAccuracyChange}
                   />
@@ -103,14 +94,14 @@ class HeatmapAverage extends Component {
                 {...this.props}
                 filteredData={this.state.builtData}
                 sorters={this.props.shortSorters}
-                format="average"
+                format="count"
               />
             </div>
             {this.props.selectedStudy ? (
               <div className="unitdetail col--6">
                 <StudySorterSummary
                   {...this.props}
-                  accuracy={this.state.snrMin}
+                  accuracy={this.state.accuracy}
                 />
               </div>
             ) : (
@@ -137,4 +128,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HeatmapAverage);
+)(HeatmapCount);

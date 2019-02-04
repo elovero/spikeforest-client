@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import HeatmapRow from "./HeatmapRow";
-import { isEmpty } from "../utils";
-import { ContinuousColorLegend } from "react-vis";
+import React, { Component } from 'react';
+import HeatmapRow from './HeatmapRow';
+import { isEmpty } from '../../utils';
+import { ContinuousColorLegend } from 'react-vis';
 
 class HeatmapViz extends Component {
   constructor(props) {
@@ -43,13 +43,13 @@ class HeatmapViz extends Component {
     const loading = isEmpty(this.state.vizData);
     const legendCopy = {
       count: {
-        startTitle: "Least Units Found",
-        endTitle: "Most Units Found"
+        startTitle: 'Least Units Found',
+        endTitle: 'Most Units Found',
       },
       average: {
-        startTitle: "Lowest Average Accuracy",
-        endTitle: "Highest Average Accuracy"
-      }
+        startTitle: 'Lowest Average Accuracy',
+        endTitle: 'Highest Average Accuracy',
+      },
     };
     return (
       <div>
@@ -60,8 +60,8 @@ class HeatmapViz extends Component {
             <div className="heatmap__legend">
               <ContinuousColorLegend
                 width={580}
-                startColor={"#fafafd"}
-                endColor={"#384ca2"}
+                startColor={'#fafafd'}
+                endColor={'#384ca2'}
                 startTitle={legendCopy[this.props.format].startTitle}
                 endTitle={legendCopy[this.props.format].endTitle}
                 height={20}

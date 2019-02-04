@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../../node_modules/react-vis/dist/style.css';
+import '../../../node_modules/react-vis/dist/style.css';
 import { XYPlot, XAxis, YAxis, HeatmapSeries, LabelSeries } from 'react-vis';
-import Preloader from './Preloader';
-import { isEmpty } from '../utils';
+import Preloader from '../Preloader';
+import { isEmpty } from '../../utils';
 
 class HeatmapRow extends Component {
   constructor(props) {
