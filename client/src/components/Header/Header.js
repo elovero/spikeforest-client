@@ -13,8 +13,12 @@ class Header extends Component {
       <Navbar variant="light" expand="lg" fixed="top" className="navbar__white">
         <Container className="navbar__container">
           <Navbar.Brand href="/">
-            Oh hello. 👋 Please ignore this awkward navbar Liz will fix but
-            wanted to work on other stuff
+            Oh hello.
+            <span role="img" aria-label="waving hand">
+              👋
+            </span>
+            Please ignore this awkward navbar Liz will fix but wanted to work on
+            other stuff
           </Navbar.Brand>
           <Navbar.Brand href="/">
             <img

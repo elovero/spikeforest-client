@@ -5,8 +5,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
 
-import Container from 'react-bootstrap/Container';
-
 // import components
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';

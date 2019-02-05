@@ -678,7 +678,7 @@ li {
 
 /* Range Slider
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.slider__container {
+/* .slider__container {
   width: 580px;
   margin: 10px 0;
 }
@@ -710,7 +710,7 @@ li {
 .slider__copy > p {
   margin-bottom: 0;
   line-height: 1.3rem;
-}
+} */
 
 /* Unit Detail
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

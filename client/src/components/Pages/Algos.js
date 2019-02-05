@@ -5,7 +5,6 @@ import DocsIcon from '../DocsIcon';
 import ActiveIcon from '../ActiveIcon';
 import algoRows from '../../algos-copy';
 import ReactCollapsingTable from 'react-collapsing-table';
-import Container from 'react-bootstrap/Container';
 
 class Algos extends Component {
   constructor(props) {

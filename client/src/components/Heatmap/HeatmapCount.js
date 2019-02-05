@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import HeatmapViz from './HeatmapViz';
 import { isEmpty } from '../../utils';
+
+// Components
 import Preloader from '../Preloader';
 import StudySorterSummary from '../StudySorterSummary';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css';
+
+// Redux
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../actions/actionCreators';
-import Container from 'react-bootstrap/Container';
+
+// Stylin'
+import './heatmap.css';
 
 class HeatmapCount extends Component {
   constructor(props) {
@@ -69,24 +78,30 @@ class HeatmapCount extends Component {
     return (
       <div>
         {loading ? (
-          <Preloader />
+          <Container>
+            <Preloader />
+          </Container>
         ) : (
           <Container>
-            <div className="byline">
-              <p>
-                <b>Minimum accuracy: {Math.round(accuracy * 100) / 100}</b>
-              </p>
-            </div>
-            <div className="slider__vertical">
-              <Slider
-                min={0}
-                max={1}
-                value={accuracy}
-                step={0.05}
-                orientation="horizontal"
-                onChange={this.handleAccuracyChange}
-              />
-            </div>
+            <Row className="slider__horizontal">
+              <Col md={{ span: 6 }}>
+                <p className="byline">
+                  <b>Minimum accuracy: {Math.round(accuracy * 100) / 100}</b>
+                </p>
+              </Col>
+            </Row>
+            <Row className="slider__horizontal">
+              <Col md={{ span: 6 }}>
+                <Slider
+                  min={0}
+                  max={1}
+                  value={accuracy}
+                  step={0.05}
+                  orientation="horizontal"
+                  onChange={this.handleAccuracyChange}
+                />
+              </Col>
+            </Row>
             <HeatmapViz
               {...this.props}
               filteredData={this.state.builtData}

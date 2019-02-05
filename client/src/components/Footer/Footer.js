@@ -6,8 +6,8 @@ class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <div class="outro">
-          <p class="footer__description">
+        <div className="outro">
+          <p className="footer__description">
             SpikeForest is a website and open source computing framework for
             evaluating and comparing spike-sorting algorithms for
             neurophysiology data analysis.
@@ -15,31 +15,53 @@ class Footer extends Component {
         </div>
 
         <ul class="footer__links x-small">
-          <li class="x-small">
+          <li className="x-small">
             <a href="/about">About</a>
           </li>
-          <li class="x-small">
-            <a href="https://simonsfoundation.org">Simons Foundation</a>
+          <li className="x-small">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://simonsfoundation.org"
+            >
+              Simons Foundation
+            </a>
           </li>
-          <li class="x-small">
-            <a href="https://flatironinstitute.org">Flatiron Institute</a>
+          <li className="x-small">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://flatironinstitute.org"
+            >
+              Flatiron Institute
+            </a>
           </li>
-          <li class="x-small">
-            <a href="https://github.com/flatironinstitute/spikeforest2">
+          <li className="x-small">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/flatironinstitute/spikeforest2"
+            >
               SpikeForest Analysis Framework
             </a>
           </li>
-          <li class="x-small">
-            <a mailto="elovero@flatironinstitute.org">Contact</a>
+          <li className="x-small">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="mailto=elovero@flatironinstitute.org?Subject=Spikeforest%20Contact"
+            >
+              Contact
+            </a>
           </li>
         </ul>
-        <div class="footer__interwebs">
-          <div class="interwebs__outer">
+        <div className="footer__interwebs">
+          <div className="interwebs__outer">
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/flatironinstitute"
-              class="github-logo"
+              className="github-logo"
             >
               <img alt="spikeforest logo" src={github} height="24" />
             </a>
@@ -47,14 +69,22 @@ class Footer extends Component {
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/flatironinstitute"
-              class="github-logo"
+              className="github-logo"
             >
               <img alt="spikeforest logo" src={github} height="24" />
             </a>
           </div>
         </div>
-        <p class="footer__location xx-small tk-atlas">
-          SpikeForest is made with 🔬 in NYC
+        <p className="footer__location xx-small tk-atlas">
+          SpikeForest is made with
+          <span
+            role="img"
+            aria-label="microscrope emoji"
+            className="footer__emoji"
+          >
+            🔬
+          </span>
+          in NYC
           <span
             role="img"
             aria-label="statue of liberty"
