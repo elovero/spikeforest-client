@@ -41,7 +41,7 @@ class StudySorterSummary extends Component {
       isEmpty(this.state.study) ||
       isEmpty(this.state.sorter);
     return (
-      <div className="ddetail__column">
+      <div className="detail__column">
         <h4 className="unitdetail__title">Detail View</h4>
         <div className="unitdetail__copy">
           <div className="tab-header__row">
