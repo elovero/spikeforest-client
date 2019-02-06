@@ -16,7 +16,7 @@
 }
 
 .heatmap__buttonrow {
-  margin: 0 auto;
+  margin: 0 auto 3rem auto;
   width: 100%;
   text-align: center;
   display: flex;
@@ -65,4 +65,70 @@
 .slider__copy > p {
   margin-bottom: 0;
   line-height: 1.3rem;
+}
+
+/* Scrollytelling
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.scrollyteller__container {
+  display: flex;
+  border-top: 1px solid pink;
+  font-family: Helvetica;
+  border-bottom: 1px solid pink;
+  justify-content: space-between;
+  padding: 5rem 0;
+}
+
+.heatmap__column {
+  flex-basis: 35%;
+}
+
+.detail__column {
+  top: 0px;
+  width: 100%;
+  position: sticky;
+  flex-basis: 60%;
+  align-self: flex-start;
+  background-color: purple;
+}
+
+.heatmap__legend {
+  /* margin-bottom: 5rem; */
+}
+
+/* Unit Detail
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.unitdetail {
+  text-align: right;
+}
+
+.unitdetail__title {
+  font-family: var(--serif);
+  margin-top: 1nav0px;
+}
+
+.unitdetail__copy {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  line-height: 2.9rem;
+  text-align: right;
+  padding: 5rem;
+  background-color: white;
+}
+
+.unitdetail__list {
+  font-size: 1.2rem;
+  font-family: var(--serif);
+  text-align: right;
+}
+
+.tab-header__row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.tab-header__bundle {
+  font-size: 1.4rem;
 }

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import HeatmapRow from './HeatmapRow';
 import { isEmpty } from '../../utils';
-import { ContinuousColorLegend } from 'react-vis';
+import { Scrollama, Step } from 'react-scrollama';
 
 class HeatmapViz extends Component {
   constructor(props) {
     super(props);
-    this.state = { vizData: [] };
+    this.state = { vizData: [], data: 0 };
   }
 
   componentDidMount() {
@@ -39,46 +39,33 @@ class HeatmapViz extends Component {
     }
   }
 
+  onStepEnter({ element, data, direction }) {
+    this.setState({ data });
+  }
+
   render() {
     const loading = isEmpty(this.state.vizData);
-    const legendCopy = {
-      count: {
-        startTitle: 'Least Units Found',
-        endTitle: 'Most Units Found',
-      },
-      average: {
-        startTitle: 'Lowest Average Accuracy',
-        endTitle: 'Highest Average Accuracy',
-      },
-    };
     return (
       <div>
         {loading ? (
           <h4>...</h4>
         ) : (
-          <div className="heatmap__container">
-            <div className="heatmap__legend">
-              <ContinuousColorLegend
-                width={580}
-                startColor={'#fafafd'}
-                endColor={'#384ca2'}
-                startTitle={legendCopy[this.props.format].startTitle}
-                endTitle={legendCopy[this.props.format].endTitle}
-                height={20}
-              />
-            </div>
-            <div className="heatmap__viz">
+          <div className="heatmap__column">
+            <p>data: {this.state.data}</p>
+            <Scrollama onStepEnter={this.onStepEnter}>
               {this.state.vizData.map((data, i) => (
-                <HeatmapRow
-                  {...this.props}
-                  vizDatum={data}
-                  key={`hmrow${i}`}
-                  index={i}
-                  format={this.props.format}
-                  sorters={this.props.sorters.sort()}
-                />
+                <Step data={i}>
+                  <HeatmapRow
+                    {...this.props}
+                    vizDatum={data}
+                    key={`hmrow${i}`}
+                    index={i}
+                    format={this.props.format}
+                    sorters={this.props.sorters.sort()}
+                  />
+                </Step>
               ))}
-            </div>
+            </Scrollama>
           </div>
         )}
       </div>
@@ -87,3 +74,29 @@ class HeatmapViz extends Component {
 }
 
 export default HeatmapViz;
+
+// class Graphic extends PureComponent {
+//   state = {
+//     data: 0,
+//   };
+
+//   onStepEnter = ({ element, data, direction }) => this.setState({ data });
+
+//   render() {
+//     const { data } = this.state;
+
+//     return (
+//       <div>
+//         <p>data: {data}</p>
+//         <Scrollama onStepEnter={this.onStepEnter}>
+//           <Step data={1}>
+//             step 1
+//           </Step>
+//           <Step data={2}>
+//             step 2
+//           </Step>
+//         </Scrollama>
+//       </div>
+//     );
+//   }
+// }

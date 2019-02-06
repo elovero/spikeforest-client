@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import StudySorterTable from "./StudySorterTable";
-import { isEmpty } from "../utils";
+import React, { Component } from 'react';
+import StudySorterTable from './StudySorterTable';
+import { isEmpty } from '../utils';
 
 class StudySorterSummary extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class StudySorterSummary extends Component {
 
     this.state = {
       study: null,
-      sorter: null
+      sorter: null,
     };
   }
 
@@ -41,20 +41,20 @@ class StudySorterSummary extends Component {
       isEmpty(this.state.study) ||
       isEmpty(this.state.sorter);
     return (
-      <div className="unitdetail__container">
+      <div className="ddetail__column">
         <h4 className="unitdetail__title">Detail View</h4>
         <div className="unitdetail__copy">
           <div className="tab-header__row">
             <div className="tab-header__bundle">
               <a href="/study">
                 <b>Sorter: </b>
-                {selectedStudy ? selectedStudy.sorter : ""}
+                {selectedStudy ? selectedStudy.sorter : ''}
               </a>
             </div>
             <div className="tab-header__bundle">
               <a href="/study">
                 <b>Study: </b>
-                {selectedStudy ? selectedStudy.study : ""}
+                {selectedStudy ? selectedStudy.study : ''}
               </a>
             </div>
           </div>

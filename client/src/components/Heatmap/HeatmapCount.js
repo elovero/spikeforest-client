@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HeatmapViz from './HeatmapViz';
 import { isEmpty } from '../../utils';
+import { ContinuousColorLegend } from 'react-vis';
 
 // Components
 import Preloader from '../Preloader';
@@ -75,6 +76,17 @@ class HeatmapCount extends Component {
   render() {
     let loading = isEmpty(this.state.builtData);
     let accuracy = this.state.accuracy;
+    // TODO: Can i refactor this to be all one file instead of count/average?
+    const legendCopy = {
+      count: {
+        startTitle: 'Least Units Found',
+        endTitle: 'Most Units Found',
+      },
+      average: {
+        startTitle: 'Lowest Average Accuracy',
+        endTitle: 'Highest Average Accuracy',
+      },
+    };
     return (
       <div>
         {loading ? (
@@ -102,12 +114,34 @@ class HeatmapCount extends Component {
                 />
               </Col>
             </Row>
-            <HeatmapViz
-              {...this.props}
-              filteredData={this.state.builtData}
-              sorters={this.props.shortSorters}
-              format="count"
-            />
+            <Row>
+              <div className="heatmap__legend">
+                <ContinuousColorLegend
+                  width={580}
+                  startColor={'#fafafd'}
+                  endColor={'#384ca2'}
+                  startTitle={'Least Units Found'}
+                  endTitle={'Most Units Found'}
+                  height={20}
+                />
+              </div>
+            </Row>
+            <div className="scrollyteller__container">
+              <HeatmapViz
+                {...this.props}
+                filteredData={this.state.builtData}
+                sorters={this.props.shortSorters}
+                format="count"
+              />
+              {this.props.selectedStudy ? (
+                <StudySorterSummary
+                  {...this.props}
+                  accuracy={this.state.accuracy}
+                />
+              ) : (
+                <div />
+              )}
+            </div>
           </Container>
         )}
       </div>
@@ -130,13 +164,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(HeatmapCount);
-
-// {
-//   this.props.selectedStudy ? (
-//     <Container>
-//       <StudySorterSummary {...this.props} accuracy={this.state.accuracy} />
-//     </Container>
-//   ) : (
-//     <div />
-//   );
-// }
