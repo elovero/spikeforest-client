@@ -14,7 +14,7 @@ class Footer extends Component {
           </p>
         </div>
 
-        <ul class="footer__links x-small">
+        <ul className="footer__links x-small">
           <li className="x-small">
             <a href="/about">About</a>
           </li>

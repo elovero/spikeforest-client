@@ -90,6 +90,12 @@
   align-self: flex-start;
   background-color: purple;
 }
+.step {
+  margin: 0 auto 2rem auto;
+  border: 1px solid #333;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
 
 .heatmap__legend {
   /* margin-bottom: 5rem; */

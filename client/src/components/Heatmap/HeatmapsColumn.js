@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import HeatmapCount from './HeatmapCount';
-import HeatmapAverage from './HeatmapAverage';
+import HeatmapContainer from './HeatmapContainer';
 import 'react-rangeslider/lib/index.css';
 import {
   ButtonToolbar,
@@ -11,7 +10,7 @@ import {
 
 import './heatmap.css';
 
-class HeatmapsContainer extends Component {
+class HeatmapsColumn extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,14 +51,10 @@ class HeatmapsContainer extends Component {
             </ToggleButtonGroup>
           </ButtonToolbar>
         </Container>
-        {format === 'count' ? (
-          <HeatmapCount {...this.props} format={this.state.format} />
-        ) : (
-          <HeatmapAverage {...this.props} format={this.state.format} />
-        )}
+        <HeatmapContainer {...this.props} format={this.state.format} />
       </div>
     );
   }
 }
 
-export default HeatmapsContainer;
+export default HeatmapsColumn;

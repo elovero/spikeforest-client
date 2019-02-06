@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import HeatmapRow from './HeatmapRow';
 import { isEmpty } from '../../utils';
-import { Scrollama, Step } from 'react-scrollama';
 
 class HeatmapViz extends Component {
   constructor(props) {
@@ -39,10 +38,6 @@ class HeatmapViz extends Component {
     }
   }
 
-  onStepEnter({ element, data, direction }) {
-    this.setState({ data });
-  }
-
   render() {
     const loading = isEmpty(this.state.vizData);
     return (
@@ -51,21 +46,16 @@ class HeatmapViz extends Component {
           <h4>...</h4>
         ) : (
           <div className="heatmap__column">
-            <p>data: {this.state.data}</p>
-            <Scrollama onStepEnter={this.onStepEnter}>
-              {this.state.vizData.map((data, i) => (
-                <Step data={i}>
-                  <HeatmapRow
-                    {...this.props}
-                    vizDatum={data}
-                    key={`hmrow${i}`}
-                    index={i}
-                    format={this.props.format}
-                    sorters={this.props.sorters.sort()}
-                  />
-                </Step>
-              ))}
-            </Scrollama>
+            {this.state.vizData.map((data, i) => (
+              <HeatmapRow
+                {...this.props}
+                vizDatum={data}
+                key={`hmrow${i}`}
+                index={i}
+                format={this.props.format}
+                sorters={this.props.sorters.sort()}
+              />
+            ))}
           </div>
         )}
       </div>

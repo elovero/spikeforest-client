@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CopyHeader from '../CopyHeader/CopyHeader';
 import Preloader from '../Preloader';
-import HeatmapsContainer from '../Heatmap/HeatmapsContainer';
+import HeatmapsColumn from '../Heatmap/HeatmapsColumn';
 import { flattenUnits, mapUnitsBySorterStudy } from '../../dataHandlers';
 import { isEmpty } from '../../utils';
 import Container from 'react-bootstrap/Container';
@@ -110,7 +110,7 @@ class Home extends Component {
                   </p>
                 </div>
               </div>
-              <HeatmapsContainer
+              <HeatmapsColumn
                 {...this.props}
                 shortStudies={studies}
                 shortSorters={sorters}

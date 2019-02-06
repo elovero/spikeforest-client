@@ -75,13 +75,6 @@ class HeatmapAverage extends Component {
   render() {
     let loading = isEmpty(this.state.builtData);
     let snr = this.state.snrMin;
-    let selected = this.props.selectedStudy ? (
-      <Container>
-        <StudySorterSummary {...this.props} accuracy={this.state.snrMin} />
-      </Container>
-    ) : (
-      <div />
-    );
     return (
       <div>
         {loading ? (
@@ -111,7 +104,11 @@ class HeatmapAverage extends Component {
                 format="average"
               />
             </Container>
-            {selected}
+            {this.props.selectedStudy ? (
+              <StudySorterSummary {...this.props} accuracy={snr} />
+            ) : (
+              <div />
+            )}
           </div>
         )}
       </div>
