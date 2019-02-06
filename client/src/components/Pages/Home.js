@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CopyHeader from '../CopyHeader/CopyHeader';
 import Preloader from '../Preloader';
 import HeatmapsColumn from '../Heatmap/HeatmapsColumn';
 import { flattenUnits, mapUnitsBySorterStudy } from '../../dataHandlers';
