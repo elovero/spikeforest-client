@@ -6,3 +6,7 @@
 .navbar__hidden {
   visibility: hidden;
 }
+
+.navbar__link {
+  color: rgba(0, 0, 0, 0.9) !important;
+}

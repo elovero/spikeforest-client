@@ -29,11 +29,19 @@ class Header extends Component {
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav" className="navbar__right">
-            <Nav className="mr-auto">
-              <Nav.Link href="/recordings">Recordings</Nav.Link>
-              <Nav.Link href="/algos">Algorithms</Nav.Link>
-              <NavDropdown title="About" id="basic-nav-dropdown">
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="navbar__right">
+              <Nav.Link href="/recordings" className="navbar__link">
+                Recordings
+              </Nav.Link>
+              <Nav.Link href="/algos" className="navbar__link">
+                Algorithms
+              </Nav.Link>
+              <NavDropdown
+                className="navbar__link"
+                title="About"
+                id="basic-nav-dropdown"
+              >
                 <NavDropdown.Item href="/about/background">
                   Background
                 </NavDropdown.Item>
