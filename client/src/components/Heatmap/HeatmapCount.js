@@ -75,6 +75,9 @@ class HeatmapCount extends Component {
 
   render() {
     let loading = isEmpty(this.state.builtData);
+    if (!loading) {
+      console.log('🏘️', this.state.builtData);
+    }
     return (
       <div>
         {loading ? (
