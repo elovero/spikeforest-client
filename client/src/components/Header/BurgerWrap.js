@@ -6,7 +6,7 @@ import './Burger.css';
 class BurgerWrap extends Component {
   render() {
     return (
-      <Menu right>
+      <Menu right width={500}>
         <a id="home" className="menu-item" href="/">
           Home
         </a>
