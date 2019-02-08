@@ -118,8 +118,10 @@
 
 .menu__formgroup {
   border: 1px solid var(--fi-blue);
+  border-radius: 0.2rem;
 }
 
 .menu__input {
   font-size: 1.7rem;
+  border-radius: 0.2rem !important;
 }
