@@ -82,58 +82,62 @@ class HeatmapCount extends Component {
             <Preloader />
           </Container>
         ) : (
-          <Container>
-            <Row className="slider__horizontal">
-              <Col md={{ span: 6 }}>
-                <p className="byline">
-                  <b>
-                    Minimum accuracy:
-                    {Math.round(this.state.accuracy * 100) / 100}
-                  </b>
-                </p>
-              </Col>
-            </Row>
-            <Row className="slider__horizontal">
-              <Col md={{ span: 6 }}>
-                <Slider
-                  min={0}
-                  max={1}
-                  value={this.state.accuracy}
-                  step={0.05}
-                  orientation="horizontal"
-                  onChange={this.handleSliderChange}
-                />
-              </Col>
-            </Row>
-            <Row>
-              <div className="heatmap__legend">
-                <ContinuousColorLegend
-                  width={580}
-                  startColor={'#fafafd'}
-                  endColor={'#384ca2'}
-                  startTitle={'Least Units Found'}
-                  endTitle={'Most Units Found'}
-                  height={20}
-                />
-              </div>
-            </Row>
-            <div className="scrollyteller__container">
-              <HeatmapViz
-                {...this.props}
-                filteredData={this.state.builtData}
-                sorters={this.props.shortSorters}
-                format={this.props.format}
-              />
-              {this.props.selectedStudy ? (
-                <StudySorterSummary
+          <div>
+            <Container>
+              <Row className="slider__horizontal">
+                <Col md={{ span: 6 }}>
+                  <p className="byline">
+                    <b>
+                      Minimum accuracy:
+                      {Math.round(this.state.accuracy * 100) / 100}
+                    </b>
+                  </p>
+                </Col>
+              </Row>
+              <Row className="slider__horizontal">
+                <Col md={{ span: 6 }}>
+                  <Slider
+                    min={0}
+                    max={1}
+                    value={this.state.accuracy}
+                    step={0.05}
+                    orientation="horizontal"
+                    onChange={this.handleSliderChange}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                <div className="heatmap__legend">
+                  <ContinuousColorLegend
+                    width={580}
+                    startColor={'#fafafd'}
+                    endColor={'#384ca2'}
+                    startTitle={'Least Units Found'}
+                    endTitle={'Most Units Found'}
+                    height={20}
+                  />
+                </div>
+              </Row>
+            </Container>
+            <Container>
+              <div className="scrollyteller__container">
+                <HeatmapViz
                   {...this.props}
-                  accuracy={this.state.accuracy}
+                  filteredData={this.state.builtData}
+                  sorters={this.props.shortSorters}
+                  format={this.props.format}
                 />
-              ) : (
-                <div />
-              )}
-            </div>
-          </Container>
+                {this.props.selectedStudy ? (
+                  <StudySorterSummary
+                    {...this.props}
+                    accuracy={this.state.accuracy}
+                  />
+                ) : (
+                  <div />
+                )}
+              </div>
+            </Container>
+          </div>
         )}
       </div>
     );
