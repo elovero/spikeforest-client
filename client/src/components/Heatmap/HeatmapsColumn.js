@@ -11,7 +11,7 @@ import {
 
 import './heatmap.css';
 
-class HeatmapsContainer extends Component {
+class HeatmapsColumn extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -62,4 +62,4 @@ class HeatmapsContainer extends Component {
   }
 }
 
-export default HeatmapsContainer;
+export default HeatmapsColumn;

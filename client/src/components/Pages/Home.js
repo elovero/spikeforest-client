@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import CopyHeader from '../CopyHeader/CopyHeader';
 import Preloader from '../Preloader';
-import HeatmapsContainer from '../Heatmap/HeatmapsContainer';
+import HeatmapsColumn from '../Heatmap/HeatmapsColumn';
 import { flattenUnits, mapUnitsBySorterStudy } from '../../dataHandlers';
 import { isEmpty } from '../../utils';
 import Container from 'react-bootstrap/Container';
@@ -17,7 +16,7 @@ class Home extends Component {
     };
   }
 
-  // TODO: Move flatten units and map units to redux?
+  // TODO: Move these unit pulls and calculations to a parent process?
   componentDidMount() {
     if (this.props.units && this.props.studies) {
       let flatUnits = flattenUnits(this.props.units, this.props.studies);
@@ -87,7 +86,7 @@ class Home extends Component {
                   Project of
                   <a href="https://flatironinstitute.org">Flatiron Institute</a>
                 </p>
-                <p className="updated">Updated on February 4, 2019</p>
+                <p className="updated">Updated on February 7, 2019</p>
                 <p className="updated-sub">
                   Browse all datasets, algorithms, sorting results, and
                   comparisons, and inspect the source code used to generate
@@ -110,7 +109,7 @@ class Home extends Component {
                   </p>
                 </div>
               </div>
-              <HeatmapsContainer
+              <HeatmapsColumn
                 {...this.props}
                 shortStudies={studies}
                 shortSorters={sorters}

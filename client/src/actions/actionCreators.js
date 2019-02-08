@@ -2,29 +2,31 @@ import {
   getRecordings,
   getStudies,
   getSorters,
-  getTrueUnits
-} from "../dataHandlers";
+  getTrueUnits,
+} from '../dataHandlers';
 
-export const SELECT_STUDY = "SELECT_STUDY";
-export const SELECT_RECORDING = "SELECT_RECORDING";
-export const RECEIVE_RECORDINGS = "RECEIVE_RECORDINGS";
-export const RECEIVE_SORTERS = "RECEIVE_SORTERS";
-export const RECEIVE_UNITS = "RECEIVE_UNITS";
-export const RECEIVE_STUDIES = "RECEIVE_STUDIES";
-export const START_LOADING = "START_LOADING";
-export const END_LOADING = "END_LOADING";
+import createFetch from './createFetch';
+
+export const SELECT_STUDY = 'SELECT_STUDY';
+export const SELECT_RECORDING = 'SELECT_RECORDING';
+export const RECEIVE_RECORDINGS = 'RECEIVE_RECORDINGS';
+export const RECEIVE_SORTERS = 'RECEIVE_SORTERS';
+export const RECEIVE_UNITS = 'RECEIVE_UNITS';
+export const RECEIVE_STUDIES = 'RECEIVE_STUDIES';
+export const RECEIVE_PAIRING = 'RECEIVE_PAIRING';
+export const START_LOADING = 'START_LOADING';
+export const END_LOADING = 'END_LOADING';
 
 // select study
 export const selectStudy = study => ({
   type: SELECT_STUDY,
-  study
+  study,
 });
 
 export const selectRecording = recording => {
-  console.log("IN THE SELECT RECORDING", recording);
   return {
     type: SELECT_RECORDING,
-    recording
+    recording,
   };
 };
 
@@ -32,7 +34,7 @@ export const selectRecording = recording => {
 export const receiveRecordings = recordings => {
   return {
     type: RECEIVE_RECORDINGS,
-    recordings: recordings
+    recordings: recordings,
   };
 };
 
@@ -55,7 +57,7 @@ export const fetchRecordings = () => {
 // Sorters
 export const receiveSorters = sorters => ({
   type: RECEIVE_SORTERS,
-  sorters
+  sorters,
 });
 
 export const fetchSorters = () => {
@@ -77,7 +79,7 @@ export const fetchSorters = () => {
 // Studies
 export const receiveStudies = studies => ({
   type: RECEIVE_STUDIES,
-  studies
+  studies,
 });
 
 export const fetchStudies = () => {
@@ -100,7 +102,7 @@ export const fetchStudies = () => {
 export const receiveUnits = units => {
   return {
     type: RECEIVE_UNITS,
-    units
+    units,
   };
 };
 
@@ -123,10 +125,33 @@ export const fetchUnits = () => {
 // loading
 export const startLoading = () => ({
   type: START_LOADING,
-  loading: true
+  loading: true,
 });
 
 export const endLoading = () => ({
   type: END_LOADING,
-  loading: false
+  loading: false,
 });
+
+// Pairing
+export const receivePairing = pairing => ({
+  type: RECEIVE_PAIRING,
+  pairing,
+});
+
+export const fetchPairing = () => {
+  return function(dispatch) {
+    dispatch(startLoading());
+    // TODO: make a fetch request
+    return createFetch('/hello')
+      .then(res => {
+        return res.express;
+      })
+      .then(pairing => {
+        dispatch(receivePairing(pairing));
+      })
+      .then(() => {
+        dispatch(endLoading());
+      });
+  };
+};

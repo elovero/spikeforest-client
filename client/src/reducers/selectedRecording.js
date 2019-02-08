@@ -1,4 +1,4 @@
-import { SELECT_RECORDING } from "../actions/actionCreators";
+import { SELECT_RECORDING } from '../actions/actionCreators';
 
 const initialState = {
   selectedStudy: null,
@@ -7,11 +7,11 @@ const initialState = {
   sorters: null,
   studies: null,
   units: null,
-  loading: null
+  loading: null,
+  pairing: null,
 };
 
 const selectedRecording = (state = initialState, action) => {
-  console.log("IN THE ACTION", action.type);
   switch (action.type) {
     case SELECT_RECORDING:
       return action.recording;

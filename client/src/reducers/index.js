@@ -1,13 +1,14 @@
-import { combineReducers } from "redux";
-import { connectRouter } from "connected-react-router";
+import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 
-import recordings from "./recordings";
-import selectedRecording from "./selectedRecording";
-import selectedStudy from "./selectedStudy";
-import sorters from "./sorters";
-import studies from "./studies";
-import units from "./units";
-import loading from "./loading";
+import recordings from './recordings';
+import selectedRecording from './selectedRecording';
+import selectedStudy from './selectedStudy';
+import sorters from './sorters';
+import studies from './studies';
+import units from './units';
+import loading from './loading';
+import pairing from './pairing';
 
 const rootReducer = history =>
   combineReducers({
@@ -18,7 +19,8 @@ const rootReducer = history =>
     studies,
     units,
     loading,
-    router: connectRouter(history)
+    pairing,
+    router: connectRouter(history),
   });
 
 export default rootReducer;

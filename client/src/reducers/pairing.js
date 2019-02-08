@@ -1,4 +1,4 @@
-import { SELECT_STUDY } from '../actions/actionCreators';
+import { RECEIVE_PAIRING } from '../actions/actionCreators';
 
 const initialState = {
   selectedStudy: null,
@@ -11,13 +11,13 @@ const initialState = {
   pairing: null,
 };
 
-const selectedStudy = (state = initialState, action) => {
+const pairing = (state = initialState, action) => {
   switch (action.type) {
-    case SELECT_STUDY:
-      return action.study;
+    case RECEIVE_PAIRING:
+      return action.pairing;
     default:
       return state;
   }
 };
 
-export default selectedStudy;
+export default pairing;
