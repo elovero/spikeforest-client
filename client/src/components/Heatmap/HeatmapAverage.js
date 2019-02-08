@@ -5,7 +5,7 @@ import { ContinuousColorLegend } from 'react-vis';
 
 // Components
 import Preloader from '../Preloader';
-import StudySorterSummary from '../ScatterplotGroup/StudySorterSummary';
+import StudySorterSummary from '../ScatterplotBits/StudySorterSummary';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
