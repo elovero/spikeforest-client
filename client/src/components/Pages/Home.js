@@ -86,7 +86,7 @@ class Home extends Component {
                   Project of
                   <a href="https://flatironinstitute.org">Flatiron Institute</a>
                 </p>
-                <p className="updated">Updated on February 4, 2019</p>
+                <p className="updated">Updated on February 7, 2019</p>
                 <p className="updated-sub">
                   Browse all datasets, algorithms, sorting results, and
                   comparisons, and inspect the source code used to generate
