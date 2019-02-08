@@ -16,7 +16,7 @@ import Recordings from '../components/Pages/Recordings';
 import Studies from '../components/Pages/Studies';
 import Algos from '../components/Pages/Algos';
 import SinglePairing from '../components/SinglePairing';
-import headerCopy from '../header-copy';
+import headerCopy from '../components/CopyHeader/header-copy';
 
 class Routes extends Component {
   async componentDidMount() {
