@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
+// Temp Table
 import ReactCollapsingTable from 'react-collapsing-table';
 
 // Redux
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actionCreators from '../actions/actionCreators';
+import * as actionCreators from '../../actions/actionCreators';
 
 // http://localhost:3000/pairing/magland-synth-noise10-K10-C4/MountainSort4-thr3
 

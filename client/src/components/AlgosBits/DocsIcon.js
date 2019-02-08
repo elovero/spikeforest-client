@@ -1,9 +1,9 @@
-import React from "react";
-import icon from "../images/docs.svg";
+import React from 'react';
+import icon from './docs.svg';
 
 const DocsIcon = ({ row, accessor }) => {
   return (
-    <a style={{ textDecoration: "none" }} href={row[accessor]}>
+    <a style={{ textDecoration: 'none' }} href={row[accessor]}>
       <img
         src={icon}
         className="algos__icon"

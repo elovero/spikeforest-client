@@ -9,7 +9,7 @@ class BurgerWrap extends Component {
     return (
       <Menu right width={500}>
         <p className="menu__tagline">
-          <a href="/" target="_blank">
+          <a href="/" target="_blank" rel="noopener noreferrer">
             SpikeForest
           </a>{' '}
           compares spike-sorting algorithms against electrophysiology datasets
@@ -44,6 +44,43 @@ class BurgerWrap extends Component {
         >
           Contact
         </a>
+        <p className="menu__tagline">
+          Project of the{'  '}
+          <a
+            href="https://www.simonsfoundation.org/flatiron/center-for-computational-mathematics/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Center for Computational Mathematics,
+          </a>
+          {'   '}
+          <a
+            href="https://flatironinstitute.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Flatiron Institute
+          </a>
+        </p>
+        <p className="menu__tagline">
+          <a href="/" target="_blank" rel="noopener noreferrer">
+            Other
+          </a>
+          {'  '}
+          useful information{'  '}
+          <span role="img" aria-label="alembic">
+            ⚗️
+          </span>{' '}
+          or{' '}
+          <span role="img" aria-label="ghost">
+            👻
+          </span>
+          krimskrams{' '}
+          <span role="img" aria-label="cheeseburger">
+            🍔
+          </span>{' '}
+          here?
+        </p>
       </Menu>
     );
   }

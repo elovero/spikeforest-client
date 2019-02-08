@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import CopyHeader from '../CopyHeader/CopyHeader';
-import RepoIcon from '../RepoIcon';
-import DocsIcon from '../DocsIcon';
-import ActiveIcon from '../ActiveIcon';
-import algoRows from '../../algos-copy';
+import RepoIcon from '../AlgosComponents/RepoIcon';
+import DocsIcon from '../AlgosComponents/DocsIcon';
+import ActiveIcon from '../AlgosComponents/ActiveIcon';
+import algoRows from '../AlgosComponents/algos-copy';
 import ReactCollapsingTable from 'react-collapsing-table';
 
 class Algos extends Component {
