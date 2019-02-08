@@ -5,12 +5,15 @@ import {
   getTrueUnits,
 } from '../dataHandlers';
 
+import createFetch from './createFetch';
+
 export const SELECT_STUDY = 'SELECT_STUDY';
 export const SELECT_RECORDING = 'SELECT_RECORDING';
 export const RECEIVE_RECORDINGS = 'RECEIVE_RECORDINGS';
 export const RECEIVE_SORTERS = 'RECEIVE_SORTERS';
 export const RECEIVE_UNITS = 'RECEIVE_UNITS';
 export const RECEIVE_STUDIES = 'RECEIVE_STUDIES';
+export const RECEIVE_PAIRING = 'RECEIVE_PAIRING';
 export const START_LOADING = 'START_LOADING';
 export const END_LOADING = 'END_LOADING';
 
@@ -129,3 +132,26 @@ export const endLoading = () => ({
   type: END_LOADING,
   loading: false,
 });
+
+// Pairing
+export const receivePairing = pairing => ({
+  type: RECEIVE_PAIRING,
+  pairing,
+});
+
+export const fetchPairing = () => {
+  return function(dispatch) {
+    dispatch(startLoading());
+    // TODO: make a fetch request
+    return createFetch('/hello')
+      .then(res => {
+        return res.express;
+      })
+      .then(pairing => {
+        dispatch(receivePairing(pairing));
+      })
+      .then(() => {
+        dispatch(endLoading());
+      });
+  };
+};

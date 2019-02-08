@@ -1,4 +1,4 @@
-import { RECEIVE_UNITS } from "../actions/actionCreators";
+import { RECEIVE_UNITS } from '../actions/actionCreators';
 
 const initialState = {
   selectedStudy: null,
@@ -7,7 +7,8 @@ const initialState = {
   sorters: null,
   studies: null,
   units: null,
-  loading: null
+  loading: null,
+  pairing: null,
 };
 
 const units = (state = initialState, action) => {

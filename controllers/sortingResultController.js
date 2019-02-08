@@ -1,12 +1,5 @@
-const mongoose = require("mongoose");
-const Result = mongoose.model("SortingResult"); //Singleton from mongoose
-
-exports.getSortingResultsByStudySorter = async (req, res) => {
-  const sortersPromise = Sorter.find();
-  const [sorters] = await Promise.all([sortersPromise]);
-  //   TODO: Replace with kbucket calls
-  res.json({ sorters: sorters });
-};
+const mongoose = require('mongoose');
+const Result = mongoose.model('SortingResult'); //Singleton from mongoose
 
 exports.getSortingResultsByStudySorter = async (req, res, next) => {
   let studyId = req.params.studyId;

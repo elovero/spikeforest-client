@@ -1,39 +1,52 @@
-import React, { Component } from "react";
-import ReactCollapsingTable from "react-collapsing-table";
+import React, { Component } from 'react';
 
-class SingleStudy extends Component {
+import ReactCollapsingTable from 'react-collapsing-table';
+
+// Redux
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from '../actions/actionCreators';
+
+// http://localhost:3000/pairing/magland-synth-noise10-K10-C4/MountainSort4-thr3
+
+class SinglePairing extends Component {
   constructor(props) {
     super(props);
     this.state = {
       studies: [],
-      errors: []
+      errors: [],
     };
+  }
+
+  componentDidMount() {
+    console.log('🐼', this.props);
+    // this.props.fetchPairing();
   }
 
   render() {
     const recordingColumns = [
       {
-        accessor: "name",
-        label: "Recording Name",
+        accessor: 'name',
+        label: 'Recording Name',
         priorityLevel: 1,
         position: 1,
         minWidth: 100,
-        sortable: true
+        sortable: true,
       },
       {
-        accessor: "study",
-        label: "Study",
+        accessor: 'study',
+        label: 'Study',
         priorityLevel: 2,
         position: 2,
-        minWidth: 100
+        minWidth: 100,
       },
       {
-        accessor: "description",
-        label: "Description",
+        accessor: 'description',
+        label: 'Description',
         priorityLevel: 3,
         position: 3,
-        minWidth: 100
-      }
+        minWidth: 100,
+      },
     ];
     return (
       <div>
@@ -68,16 +81,32 @@ class SingleStudy extends Component {
           </div>
           <div className="recordings">
             <h3 className="recordings__title">Recordings</h3>
-            <ReactCollapsingTable
+            {/* <ReactCollapsingTable
               showPagination={true}
               rows={this.props.recordings}
               columns={recordingColumns}
               rowSize={15}
-            />
+            /> */}
           </div>
         </div>
       </div>
     );
   }
 }
-export default SingleStudy;
+
+export default SinglePairing;
+
+// function mapStateToProps(state) {
+//   return {
+//     selectedPairing: state.selectedPairing,
+//   };
+// }
+
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators(actionCreators, dispatch);
+// }
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(SinglePairing);

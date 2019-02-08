@@ -1,6 +1,7 @@
 .navbar__white {
   background: #fff;
-  /* border-bottom: 0.05rem solid #e5e5e5; */
+  /* border-bottom: 1px solid var(--fi-blue); */
+  position: fixed;
 }
 
 .navbar__hidden {

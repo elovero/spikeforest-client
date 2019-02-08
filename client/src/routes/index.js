@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
+import { withRouter } from 'react-router-dom';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -14,7 +15,7 @@ import About from '../components/Pages/About';
 import Recordings from '../components/Pages/Recordings';
 import Studies from '../components/Pages/Studies';
 import Algos from '../components/Pages/Algos';
-import SingleStudy from '../components/SingleStudy';
+import SinglePairing from '../components/SinglePairing';
 import headerCopy from '../header-copy';
 
 class Routes extends Component {
@@ -60,8 +61,10 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/study/:studyId"
-            render={props => <SingleStudy {...this.props} />}
+            path="/pairing/magland-synth-noise10-K10-C4/MountainSort4-thr3"
+            render={withRouter(props => (
+              <SinglePairing {...this.props} />
+            ))}
           />
         </Switch>
         <Footer />

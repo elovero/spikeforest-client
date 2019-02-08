@@ -8,6 +8,7 @@ const initialState = {
   studies: null,
   units: null,
   loading: null,
+  pairing: null,
 };
 
 const selectedRecording = (state = initialState, action) => {

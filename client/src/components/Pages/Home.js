@@ -16,7 +16,7 @@ class Home extends Component {
     };
   }
 
-  // TODO: Move flatten units and map units to redux?
+  // TODO: Move these unit pulls and calculations to a parent process?
   componentDidMount() {
     if (this.props.units && this.props.studies) {
       let flatUnits = flattenUnits(this.props.units, this.props.studies);
