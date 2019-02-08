@@ -1,6 +1,7 @@
 const Sentry = require('@sentry/node');
 
 // Express server setup
+const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
