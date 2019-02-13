@@ -64,29 +64,3 @@ class HeatmapViz extends Component {
 }
 
 export default HeatmapViz;
-
-// class Graphic extends PureComponent {
-//   state = {
-//     data: 0,
-//   };
-
-//   onStepEnter = ({ element, data, direction }) => this.setState({ data });
-
-//   render() {
-//     const { data } = this.state;
-
-//     return (
-//       <div>
-//         <p>data: {data}</p>
-//         <Scrollama onStepEnter={this.onStepEnter}>
-//           <Step data={1}>
-//             step 1
-//           </Step>
-//           <Step data={2}>
-//             step 2
-//           </Step>
-//         </Scrollama>
-//       </div>
-//     );
-//   }
-// }

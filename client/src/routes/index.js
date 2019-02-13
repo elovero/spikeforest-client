@@ -24,6 +24,7 @@ class Routes extends Component {
     this.props.fetchSorters();
     this.props.fetchRecordings();
     this.props.fetchUnits();
+    this.props.fetchPairing();
   }
 
   render() {

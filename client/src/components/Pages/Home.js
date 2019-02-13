@@ -5,6 +5,8 @@ import { flattenUnits, mapUnitsBySorterStudy } from '../../dataHandlers';
 import { isEmpty } from '../../utils';
 import Container from 'react-bootstrap/Container';
 
+import pistil from './pistil-gray.png';
+
 import './pages.css';
 
 class Home extends Component {
@@ -75,6 +77,7 @@ class Home extends Component {
             </Container>
           ) : (
             <div>
+              <img src={pistil} className="pistil" />
               <div className="intro">
                 <p className="big">Spike Sorting Results</p>
                 <div className="dividerthick" />

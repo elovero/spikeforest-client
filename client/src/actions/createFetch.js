@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
  * of boilerplate code in the application.
  * https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch
  */
-function createFetch({ url }) {
+function createFetch(url) {
   const baseUrl = '/api';
   const defaults = {
     method: 'GET',
@@ -17,6 +17,7 @@ function createFetch({ url }) {
       'Content-Type': 'application/json',
     },
   };
+  console.log('🐶 in createFetch', url);
 
   return (url: string) => {
     fetch(`${baseUrl}${url}`, {
@@ -29,3 +30,4 @@ function createFetch({ url }) {
 }
 
 export default createFetch;
+  
