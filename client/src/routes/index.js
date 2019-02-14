@@ -13,7 +13,7 @@ import Home from '../components/Pages/Home';
 import About from '../components/Pages/About';
 import Recordings from '../components/Pages/Recordings';
 import Studies from '../components/Pages/Studies';
-import Algos from '../components/Pages/Algos';
+import Sorters from '../components/Pages/Sorters';
 import Internals from '../components/Pages/Internals';
 import Metrics from '../components/Pages/Metrics';
 import SinglePairing from '../components/PairingBits/SinglePairing';
@@ -38,9 +38,9 @@ class Routes extends Component {
             render={props => <Home {...this.props} header={headerCopy.home} />}
           />
           <Route
-            path="/algos"
+            path="/sorters"
             render={props => (
-              <Algos {...this.props} header={headerCopy.algos} />
+              <Sorters {...this.props} header={headerCopy.algos} />
             )}
           />
           <Route

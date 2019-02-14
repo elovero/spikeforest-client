@@ -169,30 +169,24 @@ class Recordings extends Component {
           {loading ? (
             <Preloader id="studies" />
           ) : (
-            <Container id="studies">
-              <div className="recordings">
-                <h3 className="recordings__title">Studies</h3>
-                <p>
-                  A study is a collection of recordings. Sorting results may be
-                  aggregated over a study.
-                </p>
+            <div className="subsection">
+              <Container id="studies">
+                <p className="subsection__title">Studies</p>
                 <ReactCollapsingTable
                   showPagination={true}
                   rows={this.props.studies}
                   columns={studyColumns}
                   rowSize={15}
                 />
-              </div>
-              <div className="recordings">
-                <h3 className="recordings__title">Recordings</h3>
+                <p className="subsection__title">Recordings</p>
                 <ReactCollapsingTable
                   showPagination={true}
                   rows={this.props.recordings}
                   columns={recordingColumns}
                   rowSize={15}
                 />
-              </div>
-            </Container>
+              </Container>
+            </div>
           )}
         </div>
       </div>
