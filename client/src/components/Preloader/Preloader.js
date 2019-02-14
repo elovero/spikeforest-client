@@ -1,10 +1,12 @@
-import React, { Component } from "react";
-import logo from "../images/logo-animation.gif";
+import React, { Component } from 'react';
+import logo from './logo-animation.gif';
+import './preloader.css';
+import { Container } from 'react-bootstrap';
 
 class Preloader extends Component {
   render() {
     return (
-      <div className="container preloader">
+      <Container className="preloader">
         <h4 className="preloader__header">
           Loading
           <span>.</span>
@@ -12,10 +14,9 @@ class Preloader extends Component {
           <span>.</span>
         </h4>
         <img src={logo} className="preloader__image" alt="spinning logo" />
-      </div>
+      </Container>
     );
   }
 }
 
 export default Preloader;
-// TODO: Make preloader gif

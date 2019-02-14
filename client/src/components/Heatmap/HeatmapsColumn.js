@@ -34,6 +34,7 @@ class HeatmapsColumn extends Component {
     return (
       <div className="container__heatmaps">
         <Container>
+          <p className="heatmap__big">Results Overview</p>
           <p className="heatmap__title">{copy}</p>
           <ButtonToolbar className="heatmap__buttonrow">
             <ToggleButtonGroup

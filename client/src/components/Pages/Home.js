@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Preloader from '../Preloader';
+import Preloader from '../Preloader/Preloader';
 import HeatmapsColumn from '../Heatmap/HeatmapsColumn';
 import { flattenUnits, mapUnitsBySorterStudy } from '../../dataHandlers';
 import { isEmpty } from '../../utils';
 import Container from 'react-bootstrap/Container';
+import { HashLink as Link } from 'react-router-hash-link';
 
 import './pages.css';
 
@@ -79,12 +80,17 @@ class Home extends Component {
             Project of
             <a href="https://flatironinstitute.org">Flatiron Institute</a>
           </p>
-          <p className="updated">Updated on February 7, 2019</p>
+          <p className="updated">Updated on February 14, 2019</p>
           <p className="updated-sub">
             Browse all datasets, algorithms, sorting results, and comparisons,
             and inspect the source code used to generate these data. Use the
-            links above to learn about recordings, sorters, metric definitions,
-            and website.
+            links to the right to learn about recordings, sorters, and metric
+            definitions.
+          </p>
+          <p>
+            <Link smooth to="/#overview" className="jump-container">
+              Jump to Results Overview
+            </Link>
           </p>
         </div>
         <div className="opener">
@@ -114,11 +120,12 @@ class Home extends Component {
           </div>
         </div>
         {loading ? (
-          <Container>
+          <Container id="overview">
             <Preloader />
           </Container>
         ) : (
           <HeatmapsColumn
+            id="overview"
             {...this.props}
             shortStudies={studies}
             shortSorters={sorters}

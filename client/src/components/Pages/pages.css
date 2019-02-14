@@ -71,8 +71,27 @@
   color: #111;
 }
 
+.jump-container {
+  font-size: 1.5rem;
+  padding: 0 10px;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: 600;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.jump-link {
+  border-bottom: 2px solid var(--fi-blue) !important;
+}
+
+.jump-link:hover {
+  text-decoration: none !important;
+  color: var(--fi-blue) !important;
+}
+
 .prose-container {
-  max-width: 70rem;
+  max-width: 120rem;
   margin: 0 auto;
   width: 90%;
 }
