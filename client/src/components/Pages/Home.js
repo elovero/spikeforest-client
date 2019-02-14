@@ -70,7 +70,7 @@ class Home extends Component {
     return (
       <div className="home__body">
         <div className="intro">
-          <p className="big">Spike Sorting Results</p>
+          <p className="big big--home">Spike Sorting Results</p>
           <div className="dividerthick" />
           <p className="subhead">
             Spike sorting algorithms, compared against electrophysiology
@@ -87,14 +87,14 @@ class Home extends Component {
             links to the right to learn about recordings, sorters, and metric
             definitions.
           </p>
-          <p>
-            <Link smooth to="/#overview" className="jump-container">
+          <p className="jump-container">
+            <Link smooth to="/#overview" className="jump-link">
               Jump to Results Overview
             </Link>
           </p>
         </div>
         <div className="opener">
-          <div className="prose-container">
+          <div className="prose-container prose-container--wide">
             <p>
               Electrical recording from extracellular probes is a popular and
               affordable method to capture the simultaneous activity of many

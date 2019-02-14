@@ -14,6 +14,8 @@ import About from '../components/Pages/About';
 import Recordings from '../components/Pages/Recordings';
 import Studies from '../components/Pages/Studies';
 import Algos from '../components/Pages/Algos';
+import Internals from '../components/Pages/Internals';
+import Metrics from '../components/Pages/Metrics';
 import SinglePairing from '../components/PairingBits/SinglePairing';
 import headerCopy from '../components/CopyHeader/header-copy';
 
@@ -58,6 +60,14 @@ class Routes extends Component {
             render={props => (
               <Studies {...this.props} header={headerCopy.studies} />
             )}
+          />
+          <Route
+            path="/internals"
+            render={props => <Internals {...this.props} />}
+          />
+          <Route
+            path="/metrics"
+            render={props => <Metrics {...this.props} />}
           />
           <Route
             path="/pairing/magland-synth-noise10-K10-C4/MountainSort4-thr3"

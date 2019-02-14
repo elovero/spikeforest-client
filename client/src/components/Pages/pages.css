@@ -19,7 +19,7 @@
 
 .intro {
   text-align: center;
-  padding-bottom: 7.2rem;
+  padding-bottom: 4.2rem;
 }
 
 .big {
@@ -28,6 +28,10 @@
   line-height: 1.3;
   margin: 0 auto;
   font-weight: 300;
+  margin-top: 20px;
+}
+
+.big--home {
   margin-top: 100px;
 }
 
@@ -83,6 +87,7 @@
 
 .jump-link {
   border-bottom: 2px solid var(--fi-blue) !important;
+  color: rgb(42, 42, 42);
 }
 
 .jump-link:hover {
@@ -91,7 +96,7 @@
 }
 
 .prose-container {
-  max-width: 120rem;
+  max-width: 80rem;
   margin: 0 auto;
   width: 90%;
 }
@@ -106,6 +111,24 @@
   padding-bottom: 5.2rem;
 }
 
-.pistil {
-  background-color: pink;
+.list__section {
+  max-width: 78rem;
+  margin: 0 auto 1.9rem;
+  width: 90%;
+  color: #111;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.list__heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  padding-right: 1rem;
+  line-height: 1.7;
+}
+
+.list__body {
+  margin: 1.5rem 0;
 }
