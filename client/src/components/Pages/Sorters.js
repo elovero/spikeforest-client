@@ -6,7 +6,6 @@ import algoRows from '../AlgosBits/algos-copy';
 import ReactCollapsingTable from 'react-collapsing-table';
 import Preloader from '../Preloader/Preloader';
 import { isEmpty } from '../../utils';
-import { HashLink as Link } from 'react-router-hash-link';
 import { Container } from 'react-bootstrap';
 
 class Sorters extends Component {

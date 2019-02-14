@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { isEmpty } from '../../utils';
 
-// Temp Table
-import ReactCollapsingTable from 'react-collapsing-table';
-
 // Redux
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -66,12 +63,6 @@ class SinglePairing extends Component {
           </div>
           <div className="recordings">
             <h3 className="recordings__title">Recordings</h3>
-            {/* <ReactCollapsingTable
-              showPagination={true}
-              rows={this.props.recordings}
-              columns={recordingColumns}
-              rowSize={15}
-            /> */}
           </div>
         </div>
       </div>
