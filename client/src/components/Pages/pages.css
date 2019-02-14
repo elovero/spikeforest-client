@@ -107,6 +107,16 @@
   line-height: 1.7;
 }
 
+.prose-container a {
+  border-bottom: 1px solid var(--fi-blue) !important;
+  color: rgb(42, 42, 42);
+}
+
+.prose-container a:hover {
+  text-decoration: none !important;
+  color: var(--fi-blue) !important;
+}
+
 .opener {
   padding-bottom: 5.2rem;
 }
