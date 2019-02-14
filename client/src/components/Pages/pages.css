@@ -157,3 +157,9 @@
   font-size: 3rem;
   font-weight: 300;
 }
+
+.internals__section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

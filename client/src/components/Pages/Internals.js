@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import LeftMenu from '../LeftMenu';
-import CopyHeader from '../CopyHeader/CopyHeader';
-import Container from 'react-bootstrap/Container';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import './pages.css';
 
@@ -13,47 +11,85 @@ class Internals extends Component {
           <p className="big">Internals</p>
           <div className="dividerthick" />
           <p className="subhead">
-            Spike sorting algorithms, compared against electrophysiology
-            datasets with groundtruth
-          </p>
-          <p className="byline">
-            Project of
-            <a href="https://flatironinstitute.org">Flatiron Institute</a>
-          </p>
-          <p className="updated">Updated on February 14, 2019</p>
-          <p className="updated-sub">
-            Browse all datasets, algorithms, sorting results, and comparisons,
-            and inspect the source code used to generate these data. Use the
-            links to the right to learn about recordings, sorters, and metric
-            definitions.
+            All code used internally by SpikeForest is open source and
+            independently run-able. The system consists of the following:
           </p>
         </div>
         <div className="opener">
           <div className="prose-container">
+            <h3>Set of spike sorting algorithms</h3>
             <p>
-              Electrical recording from extracellular probes is a popular and
-              affordable method to capture the simultaneous activity of many
-              neurons in the brain or retina. There is a great need to quantify
-              the reliability of the firing events extracted from the recordings
-              by spike sorting algorithms. This SpikeForest website addresses
-              this need, assessing many popular spike sorting codes via "ground
-              truth" recordings, which are the gold standard in terms of
-              accuracy. We host a variety of experimental paired ground truth
-              recordings from the community, and also many in silico synthetic
-              recordings. Each sorter is run on all recordings, and the
-              resulting accuracies for the ground truth units are updated on a
-              daily basis as needed. Approximate CPU/GPU run times are also
-              reported.
+              Each algorithm consists of the following:
+              <ul>
+                <li>
+                  Environment: A docker file and image representing the
+                  environment required for running the software.[Link to
+                  details]
+                </li>
+                <li>
+                  Python wrapper: A MountainLab processor used to execute the
+                  software. [link to details]
+                </li>
+              </ul>
+              As a secondary goal, reseachers may use the SpikeForest
+              infrastructure to run spike sorting on their own computers. [link
+              to details]
+            </p>
+            <h3>
+              Registered ground truth recordings organized into studies and
+              study sets
+            </h3>
+            <p>
+              Recordings are represented in a simple flat format and are
+              publicly available. [link to details]
             </p>
             <p>
-              This software is open source: you can browse all datasets,
-              algorithms, sorting results, and comparisons, and inspect the
-              source code used to generate these data. One goal is for
-              neuroscientists to best choose the spike sorter appropriate for
-              their probe type and brain region.
+              Recordings or portions thereof may be downloaded using the
+              kbucket/cairio python interface. [link to details]
+            </p>
+            <p>
+              The SpikeInterface [link] tools provide a means to convert
+              electrophysiology recordings from various formats into the format
+              used by SpikeForest. [link to details]
+            </p>
+            <h3>Analysis pipelines</h3>
+            <p>
+              SpikeForest includes scripts for running the registered spike
+              sorting algorithms (with various parameters) on the registered
+              recordings, comparing the sorting results with ground truth, and
+              assembling the results into publicly-accessible result files that
+              provide the content for the front-end website. [link to details]
+            </p>
+            <p>
+              To promote reproducibility and scientific transparency, all
+              analysis pipelines are open source, publicly available, and may be
+              run outside the SpikeForest infrastructure in order to
+              independently reproduce the findings of this website. [link to
+              details]
+            </p>
+            <h3>This front-end website</h3>
+            <p>
+              Site for exploring recordings, spike sorting algorithms, and
+              sorting results [Liz Add Copy]
             </p>
           </div>
         </div>
+        <Container id="diagrams">
+          <Row>
+            <Col
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginBottom: '5.2rem',
+              }}
+            >
+              <p className="updated">
+                TODO: Diagram of dependence of repos and tools
+              </p>
+            </Col>
+          </Row>
+        </Container>
+        />
       </div>
     );
   }
