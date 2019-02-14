@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { isEmpty } from '../../utils';
 
 // Temp Table
 import ReactCollapsingTable from 'react-collapsing-table';
@@ -14,46 +15,29 @@ class SinglePairing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      studies: [],
-      errors: [],
+      pairing: [],
     };
   }
 
   componentDidMount() {
-    console.log('🐼', this.props);
-    // this.props.fetchPairing();
+    this.props.fetchPairing();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.selectedPairing !== prevProps.selectedPairing) {
+      console.log('🍐', this.props.selectedPairing);
+    }
   }
 
   render() {
-    const recordingColumns = [
-      {
-        accessor: 'name',
-        label: 'Recording Name',
-        priorityLevel: 1,
-        position: 1,
-        minWidth: 100,
-        sortable: true,
-      },
-      {
-        accessor: 'study',
-        label: 'Study',
-        priorityLevel: 2,
-        position: 2,
-        minWidth: 100,
-      },
-      {
-        accessor: 'description',
-        label: 'Description',
-        priorityLevel: 3,
-        position: 3,
-        minWidth: 100,
-      },
-    ];
+    let header = isEmpty(this.props.selectedPairing)
+      ? this.props.selectedPairing
+      : '🍐';
     return (
       <div>
         <div className="container container__body">
           <div className="header">
-            <h2 className="header__title">Bionet Drift</h2>
+            <h2 className="header__title">{header}</h2>
             <div className="header__copy">
               <p>
                 Some text about the study overall. A study is a collection of
@@ -95,19 +79,19 @@ class SinglePairing extends Component {
   }
 }
 
-export default SinglePairing;
+// export default SinglePairing;
 
-// function mapStateToProps(state) {
-//   return {
-//     selectedPairing: state.selectedPairing,
-//   };
-// }
+function mapStateToProps(state) {
+  return {
+    selectedPairing: state.pairing,
+  };
+}
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators(actionCreators, dispatch);
-// }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(SinglePairing);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SinglePairing);

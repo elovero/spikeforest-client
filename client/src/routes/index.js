@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
-import { withRouter } from 'react-router-dom';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -24,7 +23,6 @@ class Routes extends Component {
     this.props.fetchSorters();
     this.props.fetchRecordings();
     this.props.fetchUnits();
-    this.props.fetchPairing();
   }
 
   render() {
@@ -63,9 +61,7 @@ class Routes extends Component {
           />
           <Route
             path="/pairing/magland-synth-noise10-K10-C4/MountainSort4-thr3"
-            render={withRouter(props => (
-              <SinglePairing {...this.props} />
-            ))}
+            render={props => <SinglePairing {...this.props} />}
           />
         </Switch>
         <Footer />

@@ -12,7 +12,6 @@ const initialState = {
 };
 
 const pairing = (state = initialState, action) => {
-  console.log('🍐IN PAIRING REDUCER', action, state);
   switch (action.type) {
     case RECEIVE_PAIRING:
       return action.pairing;
