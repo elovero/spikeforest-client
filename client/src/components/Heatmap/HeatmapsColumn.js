@@ -34,6 +34,7 @@ class HeatmapsColumn extends Component {
     return (
       <div className="container__heatmaps">
         <Container>
+          <p className="heatmap__big">Results Overview</p>
           <p className="heatmap__title">{copy}</p>
           <ButtonToolbar className="heatmap__buttonrow">
             <ToggleButtonGroup
@@ -48,6 +49,29 @@ class HeatmapsColumn extends Component {
               </ToggleButton>
               <ToggleButton size="lg" value={'average'} variant="outline-dark">
                 Average Accuracy Above a Threshhold
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </ButtonToolbar>
+          <ButtonToolbar className="heatmap__buttonrow">
+            <ToggleButtonGroup
+              type="radio"
+              name="options"
+              size="lg"
+              value={this.state.format}
+              onChange={this.handleFormatChange}
+            >
+              <ToggleButton size="lg" value={'accuracy'} variant="outline-dark">
+                Accuracy
+              </ToggleButton>
+              <ToggleButton
+                size="lg"
+                value={'precision'}
+                variant="outline-dark"
+              >
+                Precision
+              </ToggleButton>
+              <ToggleButton size="lg" value={'recall'} variant="outline-dark">
+                Recall
               </ToggleButton>
             </ToggleButtonGroup>
           </ButtonToolbar>

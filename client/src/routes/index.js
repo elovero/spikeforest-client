@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
-import { withRouter } from 'react-router-dom';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -14,7 +13,9 @@ import Home from '../components/Pages/Home';
 import About from '../components/Pages/About';
 import Recordings from '../components/Pages/Recordings';
 import Studies from '../components/Pages/Studies';
-import Algos from '../components/Pages/Algos';
+import Sorters from '../components/Pages/Sorters';
+import Internals from '../components/Pages/Internals';
+import Metrics from '../components/Pages/Metrics';
 import SinglePairing from '../components/PairingBits/SinglePairing';
 import headerCopy from '../components/CopyHeader/header-copy';
 
@@ -37,9 +38,9 @@ class Routes extends Component {
             render={props => <Home {...this.props} header={headerCopy.home} />}
           />
           <Route
-            path="/algos"
+            path="/sorters"
             render={props => (
-              <Algos {...this.props} header={headerCopy.algos} />
+              <Sorters {...this.props} header={headerCopy.algos} />
             )}
           />
           <Route
@@ -61,10 +62,16 @@ class Routes extends Component {
             )}
           />
           <Route
+            path="/internals"
+            render={props => <Internals {...this.props} />}
+          />
+          <Route
+            path="/metrics"
+            render={props => <Metrics {...this.props} />}
+          />
+          <Route
             path="/pairing/magland-synth-noise10-K10-C4/MountainSort4-thr3"
-            render={withRouter(props => (
-              <SinglePairing {...this.props} />
-            ))}
+            render={props => <SinglePairing {...this.props} />}
           />
         </Switch>
         <Footer />

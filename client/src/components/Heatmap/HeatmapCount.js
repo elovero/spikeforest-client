@@ -4,7 +4,7 @@ import { isEmpty } from '../../utils';
 import { ContinuousColorLegend } from 'react-vis';
 
 // Components
-import Preloader from '../Preloader';
+import Preloader from '../Preloader/Preloader';
 import StudySorterSummary from '../ScatterplotBits/StudySorterSummary';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -75,6 +75,9 @@ class HeatmapCount extends Component {
 
   render() {
     let loading = isEmpty(this.state.builtData);
+    if (!loading) {
+      console.log('🏘️', this.state.builtData);
+    }
     return (
       <div>
         {loading ? (

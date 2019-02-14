@@ -4,7 +4,7 @@ import { isEmpty } from '../../utils';
 import { ContinuousColorLegend } from 'react-vis';
 
 // Components
-import Preloader from '../Preloader';
+import Preloader from '../Preloader/Preloader';
 import StudySorterSummary from '../ScatterplotBits/StudySorterSummary';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import CopyHeader from '../CopyHeader/CopyHeader';
 import RepoIcon from '../AlgosBits/RepoIcon';
 import DocsIcon from '../AlgosBits/DocsIcon';
 import ActiveIcon from '../AlgosBits/ActiveIcon';
 import algoRows from '../AlgosBits/algos-copy';
 import ReactCollapsingTable from 'react-collapsing-table';
+import Preloader from '../Preloader/Preloader';
+import { isEmpty } from '../../utils';
+import { Container } from 'react-bootstrap';
 
-class Algos extends Component {
+class Sorters extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +17,7 @@ class Algos extends Component {
   }
 
   componentDidMount() {
-    if (this.props.sorters.length) {
+    if (this.props.sorters && this.props.sorters.length) {
       this.filterActives();
     }
   }
@@ -94,16 +96,52 @@ class Algos extends Component {
         CustomComponent: DocsIcon,
       },
     ];
+    let loading = isEmpty(this.props.sorters) || isEmpty(this.props.recordings);
     return (
       <div>
-        <div className="container container__body container__body--algos">
-          <CopyHeader headerCopy={this.props.header} />
-        </div>
-        <div className="container container__algos">
-          <ReactCollapsingTable columns={algosColumns} rows={this.state.rows} />
+        <div className="home__body">
+          <div className="intro">
+            <p className="big">Sorters</p>
+            <div className="dividerthick" />
+            <p className="subhead">
+              Spike sorting algorithms tested in this project
+            </p>
+          </div>
+          <div className="opener">
+            <div className="prose-container">
+              <p>
+                Generally speaking, spike sorting algorithms take in an
+                unfiltered multi-channel timeseries (aka, recording) and a list
+                of algorithm parameters, and output a list of firing times and
+                associated integer unit labels.
+              </p>
+              <p>
+                This page lists the spike sorting codes we run, as well as some
+                that have yet to be incorporated. Most of the codes were
+                developed at other institutions; two of them are in-house. Click
+                on the links in <b>[column x]</b> to get to the original git
+                repo, and <b>[column y]</b> for a docker image that enables you
+                to install it easily.
+              </p>
+              <p>[some info re bundled packages - Jeremy]</p>
+            </div>
+          </div>
+          {loading ? (
+            <Preloader />
+          ) : (
+            <div className="subsection">
+              <Container>
+                <p className="subsection__title">Sorters</p>
+                <ReactCollapsingTable
+                  columns={algosColumns}
+                  rows={this.state.rows}
+                />
+              </Container>
+            </div>
+          )}
         </div>
       </div>
     );
   }
 }
-export default Algos;
+export default Sorters;

@@ -24,6 +24,12 @@ class BurgerWrap extends Component {
         <a id="studies" className="menu-item" href="/sorters">
           Sorters
         </a>
+        <a id="metrics" className="menu-item" href="/metrics">
+          Metrics
+        </a>
+        <a id="studies" className="menu-item" href="/internals">
+          Internals
+        </a>
         <Form className="menu__form">
           <Form.Group className="menu__formgroup">
             <Form.Control
